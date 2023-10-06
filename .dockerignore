@@ -1,0 +1,66 @@
+# Diretórios e arquivos específicos do Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+*.log
+*.pot
+media/
+static/
+.env
+
+# Arquivos específicos do PostgreSQL
+*.pgsql
+*.sql
+*.dump
+
+# Diretórios e arquivos específicos do Docker
+.dockerignore
+Dockerfile
+.dockerignore
+.dockerignore
+
+# Diretórios específicos para virtualenv ou dependências Python
+venv/
+env/
+lib/
+lib64/
+include/
+bin/
+share/
+local/
+
+# Outros arquivos e diretórios que não devem ser incluídos
+node_modules/
+*.git
+.vscode/
+__MACOSX/
+*.swp
+*.swo
+*.swn
+*.swm
+*.swl
+*.swt
+*.swa
+*.swf
+*.swc
+*.swg
+*.swv
+*.swz
+*.swh
+__pycache__/
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+dist/
+build/
+.idea/
+.vscode/
+pylint.out
+*.log
+*.json
+*.pytest_cache/
+__pycache__/
+.cache/
