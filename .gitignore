@@ -1,0 +1,49 @@
+# Arquivos de configuração do Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+# Arquivos de banco de dados
+db.sqlite3
+
+# Arquivos de mídia gerados
+media/
+
+# Arquivos de configuração do IDE
+.idea/
+.vscode/
+
+# Dependências
+__pycache__/
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+dist/
+build/
+
+# Arquivos de registro e saída
+*.log
+*.json
+
+# Arquivos de mídia estática compilados
+staticfiles/
+static_root/
+
+# Diretório de uploads de mídia
+media_root/
+
+# Arquivos temporários
+*.swp
+
+# Arquivos de cache
+__pycache__/
+.cache/
+
+# Arquivos de ambiente
+.env
+
+# Arquivos de teste
+*.pytest_cache/
