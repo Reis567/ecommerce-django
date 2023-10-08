@@ -47,3 +47,6 @@ __pycache__/
 
 # Arquivos de teste
 *.pytest_cache/
+
+
+help.txt
