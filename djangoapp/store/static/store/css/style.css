@@ -66,3 +66,42 @@ header{
 .mobile-menu-icon{
     display: none;
 }
+.mobile-menu{
+    display: none;
+}
+
+@media screen and (max-width:860px) {
+    .nav-bar{
+        padding: 1.5rem 4rem;
+    }
+    .nav-item{
+        display: none;
+    }
+    .auth-buttons{
+        display: none;
+    }
+    .mobile-menu-icon{
+        display: block;
+    }
+    .mobile-menu-icon i{
+        color: var(--white);
+        font-size: 30px;
+    }
+    .mobile-menu ul{
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .mobile-menu .nav-item{
+        display: block;
+        padding-top: 1.2rem;
+    }
+    .mobile-menu .auth-buttons{
+        display: block;
+        padding: 1rem 2rem;
+    }
+    .mobile-menu .auth-buttons button{
+        width: 100%;
+    }
+}
