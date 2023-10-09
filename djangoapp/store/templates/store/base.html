@@ -36,20 +36,25 @@
 
             <div class="auth-buttons">
 
-                <button>
-                    <a href="#">Login</a>
-                </button>
+                {% if user.is_authenticated %}
 
-                <button>
-                    <a href="#">Register</a>
-                </button>
+                    <button>
+                        <a href="#">Logout</a>
+                    </button>
 
-                <button>
-                    <a href="#">Logout</a>
-                </button>
-                
-                
+                {% else %}
+
+                    <button>
+                        <a href="#">Login</a>
+                    </button>
+            
+                    <button>
+                        <a href="#">Register</a>
+                    </button>
+                    
+                {% endif %}
             </div>
+            
         </nav>
     </header>
 
