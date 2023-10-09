@@ -27,15 +27,15 @@
                 <ul>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Item 1</a>
+                        <a href="#" class="nav-link">Estoque</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Item 2</a>
+                        <a href="#" class="nav-link">Favoritos</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Item 3</a>
+                        <a href="#" class="nav-link">Compras</a>
                     </li>
 
                 </ul>
@@ -44,22 +44,23 @@
             <div class="auth-buttons">
 
                 {% if user.is_authenticated %}
+    
+                <button>
+                    <a href="#">Sair</a>
+                </button>
 
-                    <button>
-                        <a href="#">Logout</a>
-                    </button>
+            {% else %}
 
-                {% else %}
+                <button>
+                    <a href="#">Login</a>
+                </button>
+        
+                <button>
+                    <a href="#">Registre-se
+                    </a>
+                </button>
 
-                    <button>
-                        <a href="#">Login</a>
-                    </button>
-            
-                    <button>
-                        <a href="#">Register</a>
-                    </button>
-
-                {% endif %}
+            {% endif %}
             </div>
             <div class="mobile-menu-icon">
                 <button onclick="menuShow()">
@@ -73,15 +74,15 @@
                 <ul>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Item 1</a>
+                        <a href="#" class="nav-link">Estoque</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Item 2</a>
+                        <a href="#" class="nav-link">Favoritos</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Item 3</a>
+                        <a href="#" class="nav-link">Compras</a>
                     </li>
 
                 </ul>
@@ -91,7 +92,7 @@
                     {% if user.is_authenticated %}
     
                         <button>
-                            <a href="#">Logout</a>
+                            <a href="#">Sair</a>
                         </button>
     
                     {% else %}
@@ -101,7 +102,8 @@
                         </button>
                 
                         <button>
-                            <a href="#">Register</a>
+                            <a href="#">Registre-se
+                            </a>
                         </button>
     
                     {% endif %}
