@@ -121,6 +121,18 @@
                 menuMobile.classList.add('open');
             }
         }
+
+        document.addEventListener("click", function (event) {
+            const menuMobile = document.querySelector(".mobile-menu");
+            const menuIcon = document.querySelector(".mobile-menu-icon button");
+            
+            // Verifica se o clique não ocorreu no menu ou no ícone do menu
+            if (!menuMobile.contains(event.target) && !menuIcon.contains(event.target)) {
+                // Fecha o menu
+                menuMobile.classList.remove("open");
+            }
+        });
+
     </script>
 </body>
 </html>

@@ -93,7 +93,7 @@ header {
     }
     .mobile-menu {
         display: none;
-        position: absolute;
+        position: absolute; 
         top: 100%;
         left: 0;
         background-color: var(--brown);
