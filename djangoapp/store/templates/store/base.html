@@ -61,7 +61,50 @@
 
                 {% endif %}
             </div>
-            
+            <div class="mobile-menu-icon">
+                <button>
+                    <i class="bi bi-list icon"></i>
+                </button>
+            </div>
+
+            <div class="mobile-menu">
+                <ul>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Item 1</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Item 2</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Item 3</a>
+                    </li>
+
+                </ul>
+
+                <div class="auth-buttons">
+
+                    {% if user.is_authenticated %}
+    
+                        <button>
+                            <a href="#">Logout</a>
+                        </button>
+    
+                    {% else %}
+    
+                        <button>
+                            <a href="#">Login</a>
+                        </button>
+                
+                        <button>
+                            <a href="#">Register</a>
+                        </button>
+    
+                    {% endif %}
+                </div>
+            </div>
             
         </nav>
     </header>

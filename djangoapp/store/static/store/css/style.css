@@ -62,3 +62,7 @@ header{
     color: var(--black);
     font-weight: 600;
 }
+
+.mobile-menu-icon{
+    display: none;
+}
