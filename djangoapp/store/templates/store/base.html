@@ -62,7 +62,7 @@
                 {% endif %}
             </div>
             <div class="mobile-menu-icon">
-                <button>
+                <button onclick="menuShow()">
                     <i class="bi bi-list icon"></i>
                 </button>
             </div>
@@ -111,5 +111,16 @@
 
     {% block content %}
     {% endblock content %}
+
+    <script>
+        function menuShow() {
+            let menuMobile = document.querySelector('.mobile-menu');
+            if (menuMobile.classList.contains('open')) {
+                menuMobile.classList.remove('open');
+            } else {
+                menuMobile.classList.add('open');
+            }
+        }
+    </script>
 </body>
 </html>
