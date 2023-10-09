@@ -64,8 +64,10 @@
             <div class="mobile-menu-icon">
                 <button onclick="menuShow()">
                     <i class="bi bi-list icon"></i>
+                    <i class="bi bi-x-lg" style="display:none;"></i>
                 </button>
             </div>
+            
 
             <div class="mobile-menu">
                 <ul>
@@ -115,12 +117,21 @@
     <script>
         function menuShow() {
             let menuMobile = document.querySelector('.mobile-menu');
+            let menuIcon = document.querySelector('.mobile-menu-icon .icon');
+            let menuIconX = document.querySelector('.mobile-menu-icon .bi-x-lg');
+            
             if (menuMobile.classList.contains('open')) {
                 menuMobile.classList.remove('open');
+                menuIcon.style.display = 'block';
+                menuIconX.style.display = 'none';
             } else {
                 menuMobile.classList.add('open');
+                menuIcon.style.display = 'none';
+                menuIconX.style.display = 'block';
             }
         }
+        
+        
 
         document.addEventListener("click", function (event) {
             const menuMobile = document.querySelector(".mobile-menu");
