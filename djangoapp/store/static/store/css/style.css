@@ -94,12 +94,40 @@ header {
     flex-direction: column;
 
 }
+.home-title h1{
+    font-size: 40px;
+}
 .home-products {
+    width: 100%;
+    height: 85vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px; 
+    padding: 30px;
+    justify-items: center;
+    align-items: center;
+}
+.prod-card{
+    width: 70%;
+    height: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--black);
+}
+.prod-img img{
+    border-radius: 10px;
 }
 
+.prod-title{
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.prod-actions{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {
