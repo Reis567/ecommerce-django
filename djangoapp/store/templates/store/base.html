@@ -27,7 +27,7 @@
                 <ul>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Inicio</a>
+                        <a href="{% url 'store:home' %}" class="nav-link">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Compras</a>
@@ -38,7 +38,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{% url 'store:cart' %}" class="nav-link">
                             Carrinho
                             <i class="bi bi-cart4">
                                 <span class="cart-total" id="cart-total">
