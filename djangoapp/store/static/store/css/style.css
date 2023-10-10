@@ -153,9 +153,46 @@ header {
     font-weight: bold;
     font-size: 23px;
 }
+.home{
+    height: 100vh;
+    width: 100%;
+}
+.home-content{
+    height: 95vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
+}
 
-
+.cart-head{
+    margin-left: 2%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    width: 95%;
+    height: 30%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--brown);
+}
+.cart-items{
+    width: 95%;
+    margin-left: 2%;
+}
+.cart-items-value{
+    height: 50px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.cart-numbs{
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+}
 
 
 
