@@ -63,6 +63,16 @@ header {
     color: var(--black);
     font-weight: 600;
 }
+#cart-total{
+    text-align: center;
+    color: var(--white);
+    background: red;
+    padding: 6px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: bolder;
+}
 
 .mobile-menu-icon{
     display: none;
@@ -82,9 +92,65 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+}
+.home-title h1{
+    font-size: 40px;
+}
+.home-products {
+    width: 100%;
+    height: 85vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    padding: 30px;
+    justify-items: center;
+    align-items: center;
+}
+.prod-card{
+    width: 70%;
+    height: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--black);
+}
+.prod-img img{
+    border-radius: 10px;
 }
 
-@media screen and (max-width:860px) {
+.prod-title{
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.prod-actions{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.prod-btns button{
+    background: var(--brown);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.prod-price{
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+/* Celulares */
+@media(max-width:480px){
     .nav-bar {
         padding: 1.5rem 4rem;
     }
@@ -139,3 +205,123 @@ header {
         display: block;
     }
 }
+
+/* Dispositivos pequenos */
+@media(min-width:481px) and (max-width:767px){
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+    .nav-item {
+        display: none;
+    }
+    .auth-buttons {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+    .mobile-menu-icon button {
+        cursor: pointer;
+    }
+    .mobile-menu-icon button i{
+        font-size: 30px;
+        color: var(--white);
+    }
+    .mobile-menu {
+        display: none;
+        position: absolute; 
+        top: 100%;
+        left: 0;
+        background-color: var(--brown);
+        width: 100%;
+        z-index: 2; 
+    }
+    
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+    .mobile-menu .auth-buttons {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+    .mobile-menu .auth-buttons button {
+        width: 50%;
+    }
+    .open {
+        display: block;
+    }
+}
+
+/* Tablets pequenos */
+@media(min-width:768px) and (max-width:991px){
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+    .nav-item {
+        display: none;
+    }
+    .auth-buttons {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+    .mobile-menu-icon button {
+        cursor: pointer;
+    }
+    .mobile-menu-icon button i{
+        font-size: 30px;
+        color: var(--white);
+    }
+    .mobile-menu {
+        display: none;
+        position: absolute; 
+        top: 100%;
+        left: 0;
+        background-color: var(--brown);
+        width: 100%;
+        z-index: 2; 
+    }
+    
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+    .mobile-menu .auth-buttons {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+    .mobile-menu .auth-buttons button {
+        width: 50%;
+    }
+    .open {
+        display: block;
+    }
+}
+
+/* Tablets grandes e Notebook */
+@media(min-width:992px) and (max-width:1400px){
+
+}
+

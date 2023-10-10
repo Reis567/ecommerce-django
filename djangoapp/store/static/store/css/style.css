@@ -110,12 +110,16 @@ header {
 .prod-card{
     width: 70%;
     height: 90%;
+    max-height: 350px;
+
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 10px var(--black);
 }
 .prod-img img{
     border-radius: 10px;
+    width: 100%;
+    height: 100%;
 }
 
 .prod-title{
@@ -124,10 +128,38 @@ header {
 }
 
 .prod-actions{
+    width: 100%;
     display: flex;
     margin-top: 20px;
     justify-content: space-between;
 }
+.prod-btns{
+    width: 60%;
+}
+.prod-btns button{
+    background: var(--brown);
+    color: var(--white);
+    padding-block: 7px ;
+    width: 45%;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.prod-price{¨
+    width: 30%;
+    padding: 7px 12px;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+
+
+
+
+
+
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {
