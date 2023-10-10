@@ -10,7 +10,8 @@ body{
     background: var(--white);
     font-family: 'Inter', sans-serif;
 }
-header{
+header {
+    position: relative; /* Adicione esta linha */
     background-color: var(--brown);
     box-shadow: 0px 3px 10px var(--black);
 }
@@ -70,6 +71,19 @@ header{
     display: none;
 }
 
+.home{
+    height: 100vh;
+    width: 100%;
+}
+.home-content{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 @media screen and (max-width:860px) {
     .nav-bar {
         padding: 1.5rem 4rem;
@@ -90,22 +104,36 @@ header{
         font-size: 30px;
         color: var(--white);
     }
+    .mobile-menu {
+        display: none;
+        position: absolute; 
+        top: 100%;
+        left: 0;
+        background-color: var(--brown);
+        width: 100%;
+        z-index: 2; 
+    }
+    
     .mobile-menu ul {
         display: flex;
         flex-direction: column;
         text-align: center;
         padding-bottom: 1rem;
     }
+    
     .mobile-menu .nav-item {
         display: block;
         padding-top: 1.2rem;
     }
     .mobile-menu .auth-buttons {
         display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 1rem 2rem;
     }
-    .mobile-menu .login-button button {
-        width: 100%;
+    .mobile-menu .auth-buttons button {
+        width: 50%;
     }
     .open {
         display: block;
