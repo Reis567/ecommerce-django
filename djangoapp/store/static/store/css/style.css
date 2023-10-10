@@ -92,9 +92,16 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+}
+.home-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
 }
 
-@media screen and (max-width:860px) {
+/* Celulares */
+@media(max-width:480px){
     .nav-bar {
         padding: 1.5rem 4rem;
     }
@@ -149,3 +156,123 @@ header {
         display: block;
     }
 }
+
+/* Dispositivos pequenos */
+@media(min-width:481px) and (max-width:767px){
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+    .nav-item {
+        display: none;
+    }
+    .auth-buttons {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+    .mobile-menu-icon button {
+        cursor: pointer;
+    }
+    .mobile-menu-icon button i{
+        font-size: 30px;
+        color: var(--white);
+    }
+    .mobile-menu {
+        display: none;
+        position: absolute; 
+        top: 100%;
+        left: 0;
+        background-color: var(--brown);
+        width: 100%;
+        z-index: 2; 
+    }
+    
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+    .mobile-menu .auth-buttons {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+    .mobile-menu .auth-buttons button {
+        width: 50%;
+    }
+    .open {
+        display: block;
+    }
+}
+
+/* Tablets pequenos */
+@media(min-width:768px) and (max-width:991px){
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+    .nav-item {
+        display: none;
+    }
+    .auth-buttons {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+    .mobile-menu-icon button {
+        cursor: pointer;
+    }
+    .mobile-menu-icon button i{
+        font-size: 30px;
+        color: var(--white);
+    }
+    .mobile-menu {
+        display: none;
+        position: absolute; 
+        top: 100%;
+        left: 0;
+        background-color: var(--brown);
+        width: 100%;
+        z-index: 2; 
+    }
+    
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+    .mobile-menu .auth-buttons {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+    .mobile-menu .auth-buttons button {
+        width: 50%;
+    }
+    .open {
+        display: block;
+    }
+}
+
+/* Tablets grandes e Notebook */
+@media(min-width:992px) and (max-width:1400px){
+
+}
+
