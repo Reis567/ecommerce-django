@@ -63,6 +63,16 @@ header {
     color: var(--black);
     font-weight: 600;
 }
+#cart-total{
+    text-align: center;
+    color: var(--white);
+    background: red;
+    padding: 6px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: bolder;
+}
 
 .mobile-menu-icon{
     display: none;
