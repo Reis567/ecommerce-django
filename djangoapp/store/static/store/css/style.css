@@ -185,6 +185,25 @@ header {
     width: 95%;
     margin-left: 2%;
 }
+.cart-items table {
+    width: 100%;
+    border-collapse: collapse; /* Mesclar bordas de células */
+}
+
+.cart-items table th, .cart-items table td {
+    text-align: center; /* Alinhar o conteúdo da célula ao centro */
+    padding: 10px; /* Adicionar espaço entre o conteúdo e as bordas da célula */
+    border: 1px solid #ccc; /* Adicionar bordas para separar as células */
+    width: 20%; /* Definir largura igual para todas as colunas (20% cada) */
+}
+
+
+
+.cart-items table th,
+.cart-items table td {
+    text-align: center; /* Alinhar as colunas Preço e Total ao centro */
+}
+
 .cart-items-value{
     height: 50px;
     margin-top: 20px;
