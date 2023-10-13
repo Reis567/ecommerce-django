@@ -110,12 +110,16 @@ header {
 .prod-card{
     width: 70%;
     height: 90%;
+    max-height: 350px;
+
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 10px var(--black);
 }
 .prod-img img{
     border-radius: 10px;
+    width: 100%;
+    height: 100%;
 }
 
 .prod-title{
@@ -124,27 +128,71 @@ header {
 }
 
 .prod-actions{
+    width: 100%;
     display: flex;
     margin-top: 20px;
     justify-content: space-between;
 }
+.prod-btns{
+    width: 60%;
+}
 .prod-btns button{
     background: var(--brown);
     color: var(--white);
-    padding: 5px 10px;
+    padding-block: 7px ;
+    width: 45%;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .prod-price{
-    padding: 5px 10px;
+    width: 30%;
+    padding: 7px 12px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 23px;
+}
+.home{
+    height: 100vh;
+    width: 100%;
+}
+.home-content{
+    height: 95vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
 }
 
-
-
+.cart-head{
+    margin-left: 2%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    width: 95%;
+    height: 30%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--brown);
+}
+.cart-items{
+    width: 95%;
+    margin-left: 2%;
+}
+.cart-items-value{
+    height: 50px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.cart-numbs{
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+}
 
 
 
