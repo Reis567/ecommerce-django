@@ -229,9 +229,94 @@ header {
     justify-content: space-evenly;
     width: 20%;
 }
+.checkout-content{
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.checkout-left{
+    width: 40%;
+    height: 45%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: 8px solid var(--brown);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px var(--brown);
+}
 
+.checkout-right{
+    width: 40%;
+    height: 45%;
+    padding: 10px;
+}
+.checkout-left-infos1{
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.checkout-left-infos1 input{
+    width: 40%;
+    border: 3px solid var(--brown);
+    padding: 4px;
+    border-radius: 8px;
+}
+.checkout-left-infos2{
+    width: 100%;
 
+}
+.checkout-left-infos2 h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    padding-left: 30px;
+}
+.checkout-left-infos3{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
 
+}
+.checkout-left-infos3 input{
+    width: 40%;
+    border: 3px solid var(--brown);
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.checkout-left-infos4{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+
+}
+.checkout-left-infos4 input{
+    width: 40%;
+    border: 3px solid var(--brown);
+    padding: 4px;
+    border-radius: 8px;
+}
+.continue-btn{
+    margin-top: 20px;
+    width: 60%;
+    border: 3px solid var(--brown);
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.continue-btn:hover{
+    background: var(--brown);
+    color: var(--white);
+}
 
 /* Celulares */
 @media(max-width:480px){

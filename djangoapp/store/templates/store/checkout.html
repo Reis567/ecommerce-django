@@ -34,7 +34,11 @@
             <div class="checkout-right-infos1">
                 <h3>
                     <i class="bi bi-arrow-left-short"></i>
-                    Voltar ao carrinho
+                    
+                    <a href="{% url 'store:cart' %}">
+                        Voltar ao carrinho
+                    </a>
+                    <hr>
                 </h3>
             </div>
 
@@ -42,9 +46,11 @@
                 <h1>
                     Detalhes do pedido
                 </h1>
+                <hr>
             </div>
 
             <div class="checkout-right-infos3">
+                <table>
                     <tr>
                         <td><img src="{% static 'caminho_da_foto1.jpg' %}" alt="Item 1"></td>
                         <td>Nome do Item 1</td>
@@ -52,6 +58,8 @@
                         <td>2x</td>
                         <td>R$ 100,00</td>
                     </tr>
+                </table>
+
             </div>
 
             <div class="checkout-right-infos4">

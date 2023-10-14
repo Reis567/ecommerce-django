@@ -187,21 +187,21 @@ header {
 }
 .cart-items table {
     width: 100%;
-    border-collapse: collapse; /* Mesclar bordas de células */
+    border-collapse: collapse;
 }
 
 .cart-items table th, .cart-items table td {
-    text-align: center; /* Alinhar o conteúdo da célula ao centro */
-    padding: 10px; /* Adicionar espaço entre o conteúdo e as bordas da célula */
-    border: 1px solid #ccc; /* Adicionar bordas para separar as células */
-    width: 20%; /* Definir largura igual para todas as colunas (20% cada) */
+    text-align: center; 
+    padding: 10px; 
+    border: 1px solid var(--brown);
+    width: 20%; 
 }
 
 
 
 .cart-items table th,
 .cart-items table td {
-    text-align: center; /* Alinhar as colunas Preço e Total ao centro */
+    text-align: center; 
 }
 
 .cart-items-value{
@@ -249,11 +249,6 @@ header {
     box-shadow: 3px 3px 10px var(--brown);
 }
 
-.checkout-right{
-    width: 40%;
-    height: 45%;
-    padding: 10px;
-}
 .checkout-left-infos1{
     width: 100%;
     margin-bottom: 20px;
@@ -316,6 +311,57 @@ header {
 .continue-btn:hover{
     background: var(--brown);
     color: var(--white);
+}
+
+.checkout-right{
+    width: 40%;
+    min-height: 45%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 8px solid var(--brown);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px var(--brown);
+}
+.checkout-right-infos1{
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+.checkout-right-infos1 h3,
+.checkout-right-infos1 a{
+    color: var(--black);
+}
+.checkout-right-infos2{
+    width: 100%;
+
+    
+    font-size: 25px;
+
+}
+.checkout-right-infos3 {
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.checkout-right-infos3 table {
+    gap: 10px;
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.checkout-right-infos3 td {
+    flex: 1;
+    text-align: center; 
+    border: 1px solid var(--brown);
+}
+.checkout-right-infos4{
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* Celulares */
