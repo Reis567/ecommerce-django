@@ -177,16 +177,52 @@ header {
     border-radius: 20px;
     border: 1px solid var(--brown);
 }
+.continue-buy{
+    color: var(--black);
+    font-size: 20px;
+}
 .cart-items{
     width: 95%;
     margin-left: 2%;
 }
+.cart-items table {
+    width: 100%;
+    border-collapse: collapse; /* Mesclar bordas de células */
+}
+
+.cart-items table th, .cart-items table td {
+    text-align: center; /* Alinhar o conteúdo da célula ao centro */
+    padding: 10px; /* Adicionar espaço entre o conteúdo e as bordas da célula */
+    border: 1px solid #ccc; /* Adicionar bordas para separar as células */
+    width: 20%; /* Definir largura igual para todas as colunas (20% cada) */
+}
+
+
+
+.cart-items table th,
+.cart-items table td {
+    text-align: center; /* Alinhar as colunas Preço e Total ao centro */
+}
+
 .cart-items-value{
     height: 50px;
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+}
+.cart-items-value .checkout-btn{
+    padding: 10px;
+    font-size: 18px;
+    background: var(--brown);
+    color: var(--white);
+    border-radius: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.cart-items-value .checkout-btn:hover{
+    background-color: var(--black);
 }
 .cart-numbs{
     display: flex;
