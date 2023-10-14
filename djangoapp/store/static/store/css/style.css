@@ -406,6 +406,10 @@ header {
 .tablehead td{
     font-weight: bold;
 }
+.pagination{
+    width: 100%;
+    text-align: center;
+}
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {
