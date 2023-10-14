@@ -9,29 +9,55 @@
 <section class="checkout">
     <div class="checkout-content">
         <div class="checkout-left">
-            <div class="infos1">
+            <div class="checkout-left-infos1">
                 <input type="text" placeholder="Nome completo">
                 <input type="text" placeholder="Email">
             </div>
-            <div class="infos2">
+            <div class="checkout-left-infos2">
                 <hr>
                 <h3>
                     Informações do endereço :
                 </h3>
                 <hr>
            </div>
-           <div class="infos3">
+           <div class="checkout-left-infos3">
             <input type="text" placeholder="Rua/Quadra/Número">
             <input type="text" placeholder="Cidade">
            </div>
-           <div class="infos4">
+           <div class="checkout-left-infos4">
             <input type="text" placeholder="Estado">
             <input type="text" placeholder="CEP">
            </div>
             <button>Continuar</button>
         </div>
         <div class="checkout-right">
+            <div class="checkout-right-infos1">
+                <h3>
+                    <i class="bi bi-arrow-left-short"></i>
+                    Voltar ao carrinho
+                </h3>
+            </div>
 
+            <div class="checkout-right-infos2">
+                <h1>
+                    Detalhes do pedido
+                </h1>
+            </div>
+
+            <div class="checkout-right-infos3">
+                    <tr>
+                        <td><img src="{% static 'caminho_da_foto1.jpg' %}" alt="Item 1"></td>
+                        <td>Nome do Item 1</td>
+                        <td>R$ 50,00</td>
+                        <td>2x</td>
+                        <td>R$ 100,00</td>
+                    </tr>
+            </div>
+
+            <div class="checkout-right-infos4">
+                <hr>
+                Total:R$99,00
+            </div>
         </div>
     </div>
 </section>
