@@ -30,4 +30,9 @@ class Pedido(models.Model):
 
     def __str__(self):
         return str(self.id)
-    
+
+class ItemdePedido(models.Model):
+    produto = models.ForeignKey(Produto, on_delete=models.SET_NULL, null=True)
+    pedido = models.ForeignKey(Pedido, on_delete=models.SET_NULL,null=True)
+    quantidade = models.IntegerField(default=0, null=True, blank=True)
+    data_add = models.DateTimeField(auto_now_add=True)
