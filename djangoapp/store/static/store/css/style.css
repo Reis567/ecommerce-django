@@ -403,12 +403,26 @@ header {
     font-size: 20px;
     font-weight: bold;
 }
+
 .tablehead td{
     font-weight: bold;
 }
+
 .pagination{
     width: 100%;
     text-align: center;
+}
+
+.step-links span{
+    font-size: 19px;
+}
+
+.pagination-btn a{
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    background: var(--brown);
+    color: var(--white);
 }
 /* Celulares */
 @media(max-width:480px){
