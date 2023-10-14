@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class Comprador(models.model):
+class Comprador(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
     nome = models.CharField(max_length=200, null=True)
     email=models.CharField(max_length=200)
@@ -13,7 +13,7 @@ class Comprador(models.model):
     
 
 
-class Produto(models.model):
+class Produto(models.Model):
     nome = models.CharField(max_length=200)
     price = models.FloatField()
     digital = models.BooleanField(default=False, null=True, blank=True)
@@ -36,3 +36,15 @@ class ItemdePedido(models.Model):
     pedido = models.ForeignKey(Pedido, on_delete=models.SET_NULL,null=True)
     quantidade = models.IntegerField(default=0, null=True, blank=True)
     data_add = models.DateTimeField(auto_now_add=True)
+
+class EnderecoEnvio(models.Model):
+	comprador = models.ForeignKey(Comprador, on_delete=models.SET_NULL, null=True)
+	pedido = models.ForeignKey(Pedido, on_delete=models.SET_NULL, null=True)
+	endereco = models.CharField(max_length=200, null=False)
+	cidade = models.CharField(max_length=200, null=False)
+	estado = models.CharField(max_length=200, null=False)
+	cep = models.CharField(max_length=200, null=False)
+	date_add = models.DateTimeField(auto_now_add=True)
+
+	def __str__(self):
+		return self.endereco
