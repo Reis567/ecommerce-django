@@ -316,7 +316,7 @@ header {
 .checkout-right{
     width: 40%;
     min-height: 45%;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -343,13 +343,31 @@ header {
 }
 .checkout-right-infos3 {
     width: 100%;
+    max-height: 50vh;
     overflow-y: scroll;
+    padding: 10px;
 }
+
+.checkout-right-infos3::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .checkout-right-infos3::-webkit-scrollbar-thumb {
+    background-color: var(--black);
+    border-radius: 5px;
+  }
+  
+  /* Personalização da barra de rolagem para navegadores Gecko (Firefox) */
+  .checkout-right-infos3 {
+    scrollbar-width: thin;
+    scrollbar-color: var(--black); 
+  }
 
 .checkout-right-infos3 table {
     gap: 10px;
     width: 100%;
     border-collapse: collapse;
+
 
 }
 
