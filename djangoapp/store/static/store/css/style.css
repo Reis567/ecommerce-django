@@ -381,7 +381,9 @@ header {
     font-size: 20px;
     font-weight: bold;
 }
-
+.tablehead td{
+    font-weight: bold;
+}
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {
