@@ -333,13 +333,26 @@ header {
 .checkout-right-infos1 h3,
 .checkout-right-infos1 a{
     color: var(--black);
+    margin-bottom: 10px;
+}
+.checkout-right-infos1 a{
+    padding: 10px;
+    background: var(--white);
+    border: 1px solid var(--brown);
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+}
+.checkout-right-infos1 a:hover{
+    background: var(--brown);
+    color: var(--white);
 }
 .checkout-right-infos2{
     width: 100%;
-
-    
     font-size: 25px;
 
+}
+.checkout-right-infos2 hr{
+    margin-bottom: 20px;
 }
 .checkout-right-infos3 {
     width: 100%;
