@@ -14,107 +14,51 @@
             {% endif %}
         </div>
         <div class="home-products">
+            {% for produto in produtos %}
             <div class="prod-card">
                 <div class="prod-img">
                     <img src="{% static 'store/imgs/produto.jpg' %}" alt="">
                 </div>
                 <div class="prod-title">
-                    Produto 
+                    {{ produto.nome }}
                 </div>
                 <div class="prod-actions">
                     <div class="prod-btns">
                         <button>
                             +Carrinho
                         </button>
-
+        
                         <button>
                             Ver produto
                         </button>
-                        
                     </div>
                     <div class="prod-price">
-                        R$99,99
+                        R$ {{ produto.price }}
                     </div>
                 </div>
-
             </div>
-
-            <div class="prod-card">
-                <div class="prod-img">
-                    <img src="{% static 'store/imgs/produto.jpg' %}" alt="">
-                </div>
-                <div class="prod-title">
-                    Produto 
-                </div>
-                <div class="prod-actions">
-                    <div class="prod-btns">
-                        <button>
-                            +Carrinho
-                        </button>
-
-                        <button>
-                            Ver produto
-                        </button>
-                        
-                    </div>
-                    <div class="prod-price">
-                        R$99,99
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="prod-card">
-                <div class="prod-img">
-                    <img src="{% static 'store/imgs/produto.jpg' %}" alt="">
-                </div>
-                <div class="prod-title">
-                    Produto 
-                </div>
-                <div class="prod-actions">
-                    <div class="prod-btns">
-                        <button>
-                            +Carrinho
-                        </button>
-
-                        <button>
-                            Ver produto
-                        </button>
-                        
-                    </div>
-                    <div class="prod-price">
-                        R$99,99
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="prod-card">
-                <div class="prod-img">
-                    <img src="{% static 'store/imgs/produto.jpg' %}" alt="">
-                </div>
-                <div class="prod-title">
-                    Produto 
-                </div>
-                <div class="prod-actions">
-                    <div class="prod-btns">
-                        <button>
-                            +Carrinho
-                        </button>
-
-                        <button>
-                            Ver produto
-                        </button>
-                        
-                    </div>
-                    <div class="prod-price">
-                        R$99,99
-                    </div>
-                </div>
-
-            </div>
+            {% endfor %}
         </div>
+        
     </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if produtos.has_previous %}
+                <a href="?page=1">&laquo; primeira</a>
+                <a href="?page={{ produtos.previous_page_number }}">anterior</a>
+            {% endif %}
+            
+            <span class="current-page">
+                Página {{ produtos.number }} de {{ produtos.paginator.num_pages }}.
+            </span>
+            
+            {% if produtos.has_next %}
+                <a href="?page={{ produtos.next_page_number }}">próxima</a>
+                <a href="?page={{ produtos.paginator.num_pages }}">última &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    
 </section>
 
 {% endblock content %}
