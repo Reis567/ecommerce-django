@@ -21,7 +21,7 @@ class Produto(models.Model):
     nome = models.CharField(max_length=200)
     price = models.FloatField()
     digital = models.BooleanField(default=False, null=True, blank=True)
-    #foto = models.ImageField(_(""), upload_to=None, height_field=None, width_field=None, max_length=None)
+    foto = models.ImageField( null=True, blank=True)
     
     def __str__(self):
         return self.nome
