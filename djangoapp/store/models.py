@@ -36,6 +36,19 @@ class Pedido(models.Model):
     completo= models.BooleanField(default=False)
     id_transacao = models.CharField(max_length=200, null=True)
 
+    @property
+    def get_cart_total(self):
+        itemdepedido = self.itemdepedido_set.all()
+        total = sum([item.get_total for item in itemdepedido])
+        return total
+    
+    @property
+    def get_cart_items(self):
+        itemdepedido = self.itemdepedido_set.all()
+        total = sum([item.quantidade for item in itemdepedido])
+        return total
+
+
     def __str__(self):
         return str(self.id)
 
@@ -48,6 +61,11 @@ class ItemdePedido(models.Model):
     pedido = models.ForeignKey(Pedido, on_delete=models.SET_NULL,null=True)
     quantidade = models.IntegerField(default=0, null=True, blank=True)
     data_add = models.DateTimeField(auto_now_add=True)
+
+    @property
+    def get_total(self):
+        total = self.produto.price * self.quantidade
+        return total
 
     class Meta:
         verbose_name = "Item de Pedido"
