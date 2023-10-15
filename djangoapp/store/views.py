@@ -38,7 +38,8 @@ def cart(request):
         items = pedido.itemdepedido_set.all()
     else:
         items = []
-    context={'items':items}
+    context={'items':items,
+             'pedido':pedido }
     return render(
         request,
         'store/cart.html',

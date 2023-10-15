@@ -18,10 +18,10 @@
 
                 <div class="cart-numbs">
                     <h3>
-                        Quantidade : 3
+                        Quantidade : {{pedido.get_cart_items}}
                     </h3>
                     <h3>
-                        Total : R$ 292,00
+                        Total : R$ {{pedido.get_cart_total|floatformat:2}}
                     </h3>
     
                 </div>
@@ -59,7 +59,7 @@
                             <td>{{item.produto.nome}}</td>
                             <td>{{item.produto.price|floatformat:2}}</td>
                             <td>{{item.quantidade}}</td>
-                            <td>R$ 100,00</td>
+                            <td>R$ {{item.get_total|floatformat:2}}</td>
                         {% endfor %}
                     </tr>
                 </tbody>
