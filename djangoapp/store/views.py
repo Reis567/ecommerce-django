@@ -38,6 +38,9 @@ def cart(request):
         items = pedido.itemdepedido_set.all()
     else:
         items = []
+        pedido = {'get_cart_total':0,
+                  'get_cart_items':0,
+                  }
     context={'items':items,
              'pedido':pedido }
     return render(
@@ -48,7 +51,17 @@ def cart(request):
 
 
 def checkout(request):
-    context={}
+    if request.user.is_authenticated:
+        comprador = request.user.comprador
+        pedido , created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
+        items = pedido.itemdepedido_set.all()
+    else:
+        items = []
+        pedido = {'get_cart_total':0,
+                  'get_cart_items':0,
+                  }
+    context={'items':items,
+             'pedido':pedido }
     return render(
         request,
         'store/checkout.html',

@@ -421,6 +421,10 @@ header {
 .tablehead td{
     font-weight: bold;
 }
+.tablebody td img{
+    max-height: 100px;
+    max-width: 100px;
+}
 
 .pagination{
     width: 100%;
