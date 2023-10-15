@@ -45,11 +45,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="{% static 'caminho_da_foto1.jpg' %}" alt="Item 1"></td>
-                        <td>Nome do Item 1</td>
-                        <td>R$ 50,00</td>
-                        <td>2</td>
-                        <td>R$ 100,00</td>
+                        {% for item in items %}
+                                {% if item.produto.foto.url %}
+
+                                    <td><img src="{{item.produto.foto.url}}" alt="Item 1"></td>
+
+                                {% else %}
+
+                                    <td><img src="{% static 'caminho_da_foto1.jpg' %}" alt="Item 1"></td>
+
+                                {% endif %}
+                            
+                            <td>{{item.produto.nome}}</td>
+                            <td>{{item.produto.price|floatformat:2}}</td>
+                            <td>{{item.quantidade}}</td>
+                            <td>R$ 100,00</td>
+                        {% endfor %}
                     </tr>
                 </tbody>
             </table>

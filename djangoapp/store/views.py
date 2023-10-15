@@ -31,7 +31,14 @@ def home(request):
     return render(request, 'store/home.html', context)
 
 def cart(request):
-    context={}
+
+    if request.user.is_authenticated:
+        comprador = request.user.comprador
+        pedido , created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
+        items = pedido.itemdepedido_set.all()
+    else:
+        items = []
+    context={'items':items}
     return render(
         request,
         'store/cart.html',
