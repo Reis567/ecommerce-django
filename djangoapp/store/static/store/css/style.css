@@ -118,6 +118,7 @@ header {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 10px var(--black);
+    border: 3px solid var(--brown);
 }
 .prod-img {
     display: flex;
@@ -129,6 +130,7 @@ header {
     border-radius: 10px;
     width: 90%;
     height: 90%;
+    max-height: 160px;
 }
 
 .prod-title{
