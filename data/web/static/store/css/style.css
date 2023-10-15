@@ -215,6 +215,9 @@ header {
     border: 1px solid var(--brown);
     width: 20%; 
 }
+.cart-items table td img{
+    max-height: 100px;
+}
 
 
 
@@ -231,7 +234,7 @@ header {
     align-items: flex-end;
 }
 .cart-items-value .checkout-btn{
-    padding: 10px;
+    padding: 13px;
     font-size: 18px;
     background: var(--brown);
     color: var(--white);
@@ -239,6 +242,7 @@ header {
     font-weight: bolder;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    margin-right: 30px;
 }
 .cart-items-value .checkout-btn:hover{
     background-color: var(--black);
@@ -246,7 +250,7 @@ header {
 .cart-numbs{
     display: flex;
     justify-content: space-evenly;
-    width: 20%;
+    width: 30%;
 }
 .checkout-content{
     width: 100%;
