@@ -289,6 +289,23 @@ header {
 .cart-items table td {
     text-align: center; 
 }
+.quant-numb{
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.qnt-change{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.qnt-change i{
+    cursor: pointer;
+    padding: 5px;
+}
 
 .cart-items-value{
     height: 50px;
@@ -316,6 +333,7 @@ header {
     justify-content: space-evenly;
     width: 30%;
 }
+
 .checkout-content{
     width: 100%;
     height: 95vh;

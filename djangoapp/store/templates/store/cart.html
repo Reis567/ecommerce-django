@@ -19,6 +19,7 @@
                 <div class="cart-numbs">
                     <h3>
                         Quantidade : {{pedido.get_cart_items}}
+
                     </h3>
                     <h3>
                         Total : R$ {{pedido.get_cart_total|floatformat:2}}
@@ -58,7 +59,18 @@
                             
                             <td>{{item.produto.nome}}</td>
                             <td>{{item.produto.price|floatformat:2}}</td>
-                            <td>{{item.quantidade}}</td>
+                            <td  class="quant">
+                                <div class="quant-numb">
+                                    {{item.quantidade}}
+                                    <div class="qnt-change">
+                                        <i class="bi bi-caret-up-fill qnt-up" id=" qnt-up"></i>
+                                        <i class="bi bi-caret-down-fill qnt-down" id=" qnt-down"></i>
+                                    </div>
+                                </div>
+                                
+                                
+
+                            </td>
                             <td>R$ {{item.get_total|floatformat:2}}</td>
                         {% endfor %}
                     </tr>
