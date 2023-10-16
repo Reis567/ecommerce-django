@@ -315,7 +315,13 @@ header {
 .qnt-change i{
     cursor: pointer;
     padding: 5px;
+    transition: 0.3s ease-in-out;
+    font-size: 22px;
 }
+.qnt-change i:hover{
+    opacity: 60%;
+}
+
 
 .cart-items-value{
     height: 50px;
