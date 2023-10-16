@@ -3,7 +3,7 @@ from .models import *
 from django.core.paginator import Paginator
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import JsonResponse
-
+import json
 
 # Create your views here.
 def home(request):
@@ -70,4 +70,27 @@ def checkout(request):
 
 
 def updateItem(request):
+    data = json.loads(request.body)
+    productId = data['productId']
+    action = data['action']
+    print('action:', action)
+    print('productId:', productId)
+
+    comprador = request.user.comprador
+    produto = Produto.objects.get(id=productId)
+    pedido, created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
+
+    itemdePedido, created = ItemdePedido.objects.get_or_create(pedido=pedido, produto=produto)
+
+    if action == 'add':
+        itemdePedido.quantidade = (itemdePedido.quantidade + 1)
+    elif action == 'remove':
+        itemdePedido.quantidade = (itemdePedido.quantidade - 1)
+
+    itemdePedido.save()
+    print('feito')
+
+    if itemdePedido.quantidade <= 0:
+        itemdePedido.delete()
+
     return JsonResponse('Item was added', safe=False)
