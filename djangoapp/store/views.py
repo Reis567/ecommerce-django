@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import *
 from django.core.paginator import Paginator
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-
+from django.http import JsonResponse
 
 
 # Create your views here.
@@ -67,3 +67,7 @@ def checkout(request):
         'store/checkout.html',
         context
     )
+
+
+def updateItem(request):
+    return JsonResponse('Item was added', safe=False)
