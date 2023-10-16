@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('User :' ,user)
 
             if(user=="AnonymousUser"){
-                console.log('User is not authenticated')
+                console.log('User Unlogged')
             }else{
                 updateUserOrder(productId, action)
             }
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             method:'POST',
             headers:{
                 'Content-Type':'aplication/json',
+                'X-CSRFToken':csrftoken,
             },
             body:JSON.stringify({'productId':productId , 'action':action})
         })
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return response.json();
         })
         .then((data)=>{
-            console.log('data : ', data)
-        })
+            location.reload()
+        });
     }
 });
