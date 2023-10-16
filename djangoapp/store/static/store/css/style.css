@@ -219,11 +219,21 @@ header {
 .prod-btns{
     width: 60%;
 }
-.prod-btns button{
+.prod-btns .seeprodbtn{
     background: var(--brown);
     color: var(--white);
     padding-block: 7px ;
     width: 45%;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.prod-btns .addcartbtn {
+    background: var(--brown);
+    color: var(--white);
+    padding-block: 7px ;
+    width: 30%;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
