@@ -6,6 +6,24 @@
 
 <section class="home">
     <div class="home-content">
+        
+    <button class="btn-catego" id="btn-catego">
+        Categorias
+        <i class="bi bi-caret-right-fill"></i>
+        </button>
+      <div class="left-sidebar" id="sidebar">
+        <h3 class="sidebar-title">
+          Categorias
+        </h3>
+        <div class="content-sidebar">
+          <a href="#" class="menu-item">Categoria1</a>
+          <a href="#" class="menu-item">Categoria1</a>
+          <a href="#" class="menu-item">Categoria1</a>
+          <a href="#" class="menu-item">Categoria1</a>
+          <a href="#" class="menu-item">Categoria1</a>
+          <a href="#" class="menu-item">Categoria1</a>
+        </div>
+      </div>
         <div class="home-title">
             {% if request.user.is_authenticated %}
                 <h1>Bem-vindo, {{ request.user.username }}</h1>
@@ -65,5 +83,15 @@
     </div>
     
 </section>
+<script>
+    const sideBar = document.getElementById("sidebar");
+    const menuBtn =  document.getElementById("btn-catego");
+
+    menuBtn.onclick = function () {
+    sidebar.classList.toggle("active");
+    menuBtn.classList.toggle("active");
+    };
+
+</script>
 
 {% endblock content %}
