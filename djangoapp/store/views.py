@@ -7,6 +7,18 @@ import json
 
 # Create your views here.
 def home(request):
+
+    if request.user.is_authenticated:
+        comprador = request.user.comprador
+        pedido , created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
+        items = pedido.itemdepedido_set.all()
+        itemsCarrinho = pedido.get_cart_items
+    else:
+        items = []
+        pedido = {'get_cart_total':0,
+                  'get_cart_items':0,
+                  }
+        itemsCarrinho = pedido['get_cart_items']
     produtos = Produto.objects.all()
 
     produtos_por_pagina = 6
@@ -26,7 +38,8 @@ def home(request):
         # Se a página estiver vazia (for maior que o número total de páginas), exiba a última página
         produtos = paginator.page(paginator.num_pages)
 
-    context = {'produtos': produtos}
+    context = {'produtos': produtos,
+               'itemsCarrinho':itemsCarrinho,}
 
     return render(request, 'store/home.html', context)
 
