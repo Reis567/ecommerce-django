@@ -8,27 +8,24 @@
 
 <section class="checkout">
     <div class="checkout-content">
-        <div class="checkout-left" id="shipping-info">
-            <div class="checkout-left-infos1">
-                <input type="text" placeholder="Nome completo">
-                <input type="text" placeholder="Email">
-            </div>
-            <div class="checkout-left-infos2">
-                <hr>
-                <h3>
-                    Informações do endereço :
-                </h3>
-                <hr>
-           </div>
-           <div class="checkout-left-infos3">
-            <input type="text" placeholder="Rua/Quadra/Número">
-            <input type="text" placeholder="Cidade">
-           </div>
-           <div class="checkout-left-infos4">
-            <input type="text" placeholder="Estado">
-            <input type="text" placeholder="CEP">
-           </div>
-            <button class="continue-btn">Continuar</button>
+        <div class="checkout-left">
+            <form id="form">
+                <div class="checkout-info" id="user-info">
+                        <input required class="form-field" type="text" name="name" placeholder="Nome">
+                        <input required class="form-field" type="email" name="email" placeholder="Email">
+                </div>
+                
+                <div class="checkout-shipping" id="shipping-info">
+                    <h3> Informações de envio :</h3>
+                        <input class="form-field" type="text" name="address" placeholder="Endereço">
+                        <input class="form-field" type="text" name="city" placeholder="Cidade">
+                        <input class="form-field" type="text" name="state" placeholder="Estado">
+                        <input class="form-field" type="text" name="zipcode" placeholder="CEP">
+                        <input class="form-field" type="text" name="country" placeholder="País">
+                </div>
+
+                <input id="form-button" class="form-button" type="submit" value="Continuar">
+            </form>
         </div>
         <div class="checkout-right">
             <div class="checkout-right-infos1">
@@ -101,11 +98,23 @@
     </div>
 </section>
 <script>
-    var shipping = '{{pedido.shipping}}'
+    var shipping = '{{pedido.shipping}}';
 
-    if (shipping == 'False'){
-        document.getElementById('shipping-info').innerHTML = ''
+    if (shipping === 'False') {
+        var shippingInfo = document.getElementById('shipping-info');
+        shippingInfo.innerHTML = 'No momento não é necessário preencher informações de envio !';
+        shippingInfo.style.textAlign = 'center';
+        shippingInfo.style.fontSize = '34px';
+
+        
+        var checkoutLeftForm = document.querySelector('.checkout-left form');
+        if (checkoutLeftForm) {
+            checkoutLeftForm.style.display = 'flex';
+            checkoutLeftForm.style.justifyContent = 'space-evenly';
+        }
     }
 </script>
+
+
 
 {% endblock content %}
