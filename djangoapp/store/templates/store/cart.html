@@ -45,8 +45,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    
                         {% for item in items %}
+                        <tr>
                                 {% if item.produto.foto.url %}
 
                                     <td><img src="{{item.produto.foto.url}}" alt="Item 1"></td>
@@ -72,8 +73,9 @@
 
                             </td>
                             <td>R$ {{item.get_total|floatformat:2}}</td>
+                        </tr>
                         {% endfor %}
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
