@@ -283,6 +283,7 @@ header {
     border-collapse: collapse;
 }
 
+
 .cart-items table th, .cart-items table td {
     text-align: center; 
     padding: 10px; 
@@ -299,6 +300,26 @@ header {
 .cart-items table td {
     text-align: center; 
 }
+.cart-items{
+    max-height: 61vh;
+    overflow-y: scroll;
+}
+
+.cart-items::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .cart-items::-webkit-scrollbar-thumb {
+    background-color: var(--black);
+    border-radius: 5px;
+  }
+  
+  /* Personalização da barra de rolagem para navegadores Gecko (Firefox) */
+  .cart-items {
+    scrollbar-width: thin;
+    scrollbar-color: var(--black); 
+  }
+
 .quant-numb{
     display: flex;
     padding: 10px;
@@ -342,6 +363,28 @@ header {
     margin-right: 30px;
 }
 .cart-items-value .checkout-btn:hover{
+    background-color: var(--black);
+}
+.checkout-btn-div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    
+}
+.checkout-btn-end{
+    padding: 13px;
+    font-size: 18px;
+    background: var(--brown);
+    color: var(--white);
+    border-radius: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 25px;
+}
+.checkout-btn-end:hover{
     background-color: var(--black);
 }
 .cart-numbs{

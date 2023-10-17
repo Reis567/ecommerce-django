@@ -28,7 +28,7 @@
                 </div>
 
                 <a href="{% url 'store:checkout' %}" class="checkout-btn">
-                    Checkout
+                    Pagar
                 </a>
             </div>
             
@@ -44,7 +44,7 @@
                         <th>Total</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="cart-body">
                     
                         {% for item in items %}
                         <tr>
@@ -64,8 +64,8 @@
                                 <div class="quant-numb">
                                     {{item.quantidade}}
                                     <div class="qnt-change">
-                                        <i class="bi bi-caret-up-fill qnt-up" id=" qnt-up"></i>
-                                        <i class="bi bi-caret-down-fill qnt-down" id=" qnt-down"></i>
+                                        <i class="bi bi-caret-up-fill qnt-up update-cart" data-action="add" data-product="{{item.produto.id}}"></i>
+                                        <i class="bi bi-caret-down-fill qnt-down update-cart"  data-action="remove" data-product="{{item.produto.id}}"></i>
                                     </div>
                                 </div>
                                 
@@ -78,6 +78,13 @@
                     
                 </tbody>
             </table>
+            
+            
+        </div>
+        <div class="checkout-btn-div">
+            <a href="{% url 'store:checkout' %}" class="checkout-btn-end">
+                Pagar
+            </a>
         </div>
         
 
