@@ -17,6 +17,7 @@ def home(request):
         items = []
         pedido = {'get_cart_total':0,
                   'get_cart_items':0,
+                  'shipping':False,
                   }
         itemsCarrinho = pedido['get_cart_items']
     produtos = Produto.objects.all()
@@ -54,6 +55,7 @@ def cart(request):
         items = []
         pedido = {'get_cart_total':0,
                   'get_cart_items':0,
+                  'shipping':False,
                   }
         itemsCarrinho = pedido['get_cart_items']
     context={'items':items,
@@ -76,6 +78,7 @@ def checkout(request):
         items = []
         pedido = {'get_cart_total':0,
                   'get_cart_items':0,
+                  'shipping':False,
                   }
         itemsCarrinho = pedido['get_cart_items']
     context={'items':items,

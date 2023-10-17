@@ -37,6 +37,15 @@ class Pedido(models.Model):
     id_transacao = models.CharField(max_length=200, null=True)
 
     @property
+    def shipping(self):
+        shipping = False
+        itemdepedido = self.itemdepedido_set.all()
+        for i in itemdepedido :
+            if i.produto.digital == False:
+                shipping = True
+        return shipping
+
+    @property
     def get_cart_total(self):
         itemdepedido = self.itemdepedido_set.all()
         total = sum([item.get_total for item in itemdepedido])

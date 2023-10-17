@@ -8,7 +8,7 @@
 
 <section class="checkout">
     <div class="checkout-content">
-        <div class="checkout-left">
+        <div class="checkout-left" id="shipping-info">
             <div class="checkout-left-infos1">
                 <input type="text" placeholder="Nome completo">
                 <input type="text" placeholder="Email">
@@ -100,5 +100,12 @@
         </div>
     </div>
 </section>
+<script>
+    var shipping = '{{pedido.shipping}}'
+
+    if (shipping == 'False'){
+        document.getElementById('shipping-info').innerHTML = ''
+    }
+</script>
 
 {% endblock content %}
