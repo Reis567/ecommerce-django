@@ -4,6 +4,7 @@ from django.core.paginator import Paginator
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import JsonResponse
 import json
+import datetime
 
 # Create your views here.
 def home(request):
@@ -119,4 +120,24 @@ def updateItem(request):
 
 
 def processOrder(request):
+    transaction_id = datetime.datetime.now().timestamp()
+    data = json.loads(request.body)
+
+    if request.user.is_authenticated:
+        comprador = request.user.comprador
+        pedido, created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
+
+
+        total = float(data['user']['total'])
+        pedido.id_transacao = transaction_id
+
+        if total == pedido.get_cart_totaL:
+            pedido.complete = True
+        pedido.save()
+
+        
+
+    else:
+        print('Usuário não logado')
+    print(request.body)
     return JsonResponse('Payment done', safe=False)
