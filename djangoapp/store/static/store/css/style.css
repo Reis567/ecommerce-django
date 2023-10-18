@@ -47,10 +47,29 @@ header {
     margin: 0 15px;
 }
 
+.nav-link:after{
+    content: '';
+    background: none repeat scroll 0 0 transparent;
+    bottom: -10px;
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background-color: var(--white);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+
+}
+.nav-link:hover:after{
+    width: 100%;
+    left: 0;
+}
+
 .nav-link{
     color: var(--white);
     font-size: 1.15rem;
     font-weight: 400px;
+    position: relative;
 }
 .auth-buttons{
     display: flex;
