@@ -135,6 +135,15 @@ def processOrder(request):
             pedido.complete = True
         pedido.save()
 
+        if pedido.shipping == True:
+            EnderecoEnvio.objects.create(
+                comprador = comprador,
+                pedido=pedido,
+                endereco=data['shipping']['endereco'],
+                cidade=data['shipping']['cidade'],
+                estado=data['shipping']['estado'],
+                cep=data['shipping']['cep'],
+            )
         
 
     else:
