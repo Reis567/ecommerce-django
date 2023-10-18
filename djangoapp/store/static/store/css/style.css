@@ -25,6 +25,9 @@ header {
     display: flex;
     align-items: center;
 }
+.logo a{
+    color: var(--white);
+}
 .logo h1{
     color: var(--white);
 }
