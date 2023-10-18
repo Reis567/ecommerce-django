@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from .views import home,checkout,cart,updateItem
+from .views import home,checkout,cart,updateItem,processOrder
 
 app_name = 'store'
 
@@ -30,5 +30,8 @@ urlpatterns = [
     path('cart/', cart, name="cart"),
 
     #store:updateItem
-    path('updateItem/', updateItem, name="updateItem")
+    path('updateItem/', updateItem, name="updateItem"),
+
+    #store:processOrder
+    path('processOrder/', processOrder, name="processOrder")
 ]
