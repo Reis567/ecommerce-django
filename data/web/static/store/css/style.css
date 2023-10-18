@@ -399,16 +399,56 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;
 }
 .checkout-left{
-    width: 40%;
-    height: 60%;
+    width: 80%;
+    height: 75%;
     padding: 10px;
-    justify-content: center;
     border: 8px solid var(--brown);
     border-radius: 10px;
     box-shadow: 3px 3px 10px var(--brown);
+}
+.checkout-left-all{
+    width: 50%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.payment-info{
+    width: 80%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 8px solid var(--brown);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px var(--brown);
+}
+.payment-info button{
+    padding: 8px;
+    border-radius: 10px;
+    border: 2px solid var(--brown);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.payment-info small{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.payment-info button:hover{
+    background-color: var(--brown);
+    border: 2px solid var(--black);
+    color: var(--white);
+}
+
+.hidden{
+    display: none;
 }
 .checkout-left form{
     width: 100%;
@@ -416,7 +456,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 form .checkout-info{
     width: 100%;
@@ -467,15 +507,7 @@ form .checkout-shipping h3{
 }
 
 
-.payment-info{
-    width: 70%;
-    height: 30%;
-    display: flex;
-    align-items: center;
-}
-.hidden{
-    display: none;
-}
+
 
 .checkout-right{
     width: 40%;

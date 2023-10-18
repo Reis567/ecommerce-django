@@ -109,8 +109,28 @@
     </div>
 </section>
 <script>
+    var user = '{{request.user}}';
+    function getToken(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === name + '=') {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    
+    var csrftoken = getToken('csrftoken');
+
+
+
     var shipping = '{{pedido.shipping}}';
-    var total = '{{pedido.get_cart_total|floatformat:2}}'
+    var total = '{{pedido.get_cart_total}}'
 
     if (shipping == 'False') {
         var shippingInfo = document.getElementById('shipping-info');
@@ -176,7 +196,7 @@
             }
         )
         .then((response) => response.json())
-        .then((data)=>{
+        .then((data) => {
             console.log('Transação sucedida', data);
             alert('Transação sucedida');
             window.location.href = "{% url 'store:home' %}"

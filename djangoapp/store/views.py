@@ -127,12 +127,15 @@ def processOrder(request):
         comprador = request.user.comprador
         pedido, created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
 
-
-        total = float(data['user']['total'])
+        total_str = data['user']['total']
+        total_str = total_str.replace(',', '.') 
+        total = float(total_str)
         pedido.id_transacao = transaction_id
 
-        if total == pedido.get_cart_totaL:
-            pedido.complete = True
+        if total == pedido.get_cart_total:
+            pedido.completo = True
+        else :
+            print(pedido.get_cart_total)
         pedido.save()
 
         if pedido.shipping == True:
