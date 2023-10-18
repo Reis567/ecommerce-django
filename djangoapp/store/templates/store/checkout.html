@@ -12,6 +12,7 @@
         <div class="checkout-left-all">
             <div class="checkout-left" id='checkout-left'>
                 <form id="form">
+                    {% csrf_token %}
                     <div class="checkout-info" id="user-info">
                             <input required class="form-field" type="text" name="name" placeholder="Nome">
                             <input required class="form-field" type="email" name="email" placeholder="Email">

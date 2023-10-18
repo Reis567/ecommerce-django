@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Comprador(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
     nome = models.CharField(max_length=200, null=True)
-    email=models.CharField(max_length=200)
+    email=models.EmailField(max_length=254)
 
     def __str__(self):
         return self.nome
@@ -19,7 +19,7 @@ class Comprador(models.Model):
 
 class Produto(models.Model):
     nome = models.CharField(max_length=200)
-    price = models.FloatField()
+    price = models.DecimalField(max_digits=7, decimal_places=2)
     digital = models.BooleanField(default=False, null=True, blank=True)
     foto = models.ImageField( null=True, blank=True)
     

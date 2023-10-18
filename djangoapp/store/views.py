@@ -5,6 +5,8 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import JsonResponse
 import json
 import datetime
+from django.views.decorators.csrf import csrf_exempt
+from decimal import Decimal
 
 # Create your views here.
 def home(request):
@@ -68,7 +70,7 @@ def cart(request):
         context
     )
 
-
+@csrf_exempt
 def checkout(request):
     if request.user.is_authenticated:
         comprador = request.user.comprador
@@ -127,15 +129,20 @@ def processOrder(request):
         comprador = request.user.comprador
         pedido, created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
 
-        total_str = data['user']['total']
-        total_str = total_str.replace(',', '.') 
+        total_str = data['user']['total'].replace(',', '.')
         total = float(total_str)
-        pedido.id_transacao = transaction_id
+        pedido.transaction_id = transaction_id
 
-        if total == pedido.get_cart_total:
+        # Define uma margem de tolerância para a comparação de números de ponto flutuante
+        tolerance = 0.001  # Ajuste esse valor conforme necessário
+
+        # Converte pedido.get_cart_total para float
+        cart_total = float(pedido.get_cart_total)
+
+        if abs(total - cart_total) < tolerance:
             pedido.completo = True
-        else :
-            print(pedido.get_cart_total)
+        else:
+            print(cart_total)
         pedido.save()
 
         if pedido.shipping == True:
