@@ -31,8 +31,8 @@
                 
             </div>
             <div class="payment-info hidden" id="payment-info">
-                <small>Paypal Options</small>
-                <!--<button id="make-payment">Make payment</button>-->
+                <small>Mercado pago</small>
+                <button id="make-payment">Pagamento</button>
                 <div id="paypal-button-container"></div>
             </div>
         </div>
@@ -134,6 +134,16 @@
 
     
     })
+
+    var paymentButton = document.getElementById('make-payment').addEventListener('click', function(e){
+        submitFormData()
+    })
+
+    function submitFormData(){
+        console.log('Botão de pagar clicado')
+    }
+
+    
 
 
 </script>
