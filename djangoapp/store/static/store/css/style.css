@@ -167,6 +167,12 @@ header {
     align-items:center;
     font-size: 10px;
     text-transform: uppercase;
+    border: 3px solid transparent;
+  }
+
+  .btn-catego:hover{
+    border: 3px solid var(--black);
+    box-shadow: inset 0 0 4px var(--black);
   }
   .btn-catego i{
     font-size: 25px;
