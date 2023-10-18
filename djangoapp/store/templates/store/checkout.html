@@ -8,25 +8,35 @@
 
 <section class="checkout">
     <div class="checkout-content">
-        <div class="checkout-left">
-            <form id="form">
-                <div class="checkout-info" id="user-info">
-                        <input required class="form-field" type="text" name="name" placeholder="Nome">
-                        <input required class="form-field" type="email" name="email" placeholder="Email">
-                </div>
+        
+        <div class="checkout-left-all">
+            <div class="checkout-left" id='checkout-left'>
+                <form id="form">
+                    <div class="checkout-info" id="user-info">
+                            <input required class="form-field" type="text" name="name" placeholder="Nome">
+                            <input required class="form-field" type="email" name="email" placeholder="Email">
+                    </div>
+                    
+                    <div class="checkout-shipping" id="shipping-info">
+                        <h3> Informações de envio :</h3>
+                            <input class="form-field" type="text" name="address" placeholder="Endereço">
+                            <input class="form-field" type="text" name="city" placeholder="Cidade">
+                            <input class="form-field" type="text" name="state" placeholder="Estado">
+                            <input class="form-field" type="text" name="zipcode" placeholder="CEP">
+                            <input class="form-field" type="text" name="country" placeholder="País">
+                    </div>
+    
+                    <input id="form-button" class="form-button" type="submit" value="Continuar">
+                </form>
                 
-                <div class="checkout-shipping" id="shipping-info">
-                    <h3> Informações de envio :</h3>
-                        <input class="form-field" type="text" name="address" placeholder="Endereço">
-                        <input class="form-field" type="text" name="city" placeholder="Cidade">
-                        <input class="form-field" type="text" name="state" placeholder="Estado">
-                        <input class="form-field" type="text" name="zipcode" placeholder="CEP">
-                        <input class="form-field" type="text" name="country" placeholder="País">
-                </div>
-
-                <input id="form-button" class="form-button" type="submit" value="Continuar">
-            </form>
+            </div>
+            <div class="payment-info hidden" id="payment-info">
+                <small>Paypal Options</small>
+                <!--<button id="make-payment">Make payment</button>-->
+                <div id="paypal-button-container"></div>
+            </div>
         </div>
+
         <div class="checkout-right">
             <div class="checkout-right-infos1">
                 <h3>
@@ -95,6 +105,7 @@
                 Total : R$ {{pedido.get_cart_total|floatformat:2}}
             </div>
         </div>
+
     </div>
 </section>
 <script>
@@ -113,6 +124,18 @@
             checkoutLeftForm.style.justifyContent = 'space-evenly';
         }
     }
+
+    var form = document.getElementById('form')
+    form.addEventListener('submit', function(e){
+        e.preventDefault()
+        console.log('Form enviado')
+        document.getElementById('form-button').classList.toggle('hidden');
+        document.getElementById('payment-info').classList.toggle('hidden');
+
+    
+    })
+
+
 </script>
 
 

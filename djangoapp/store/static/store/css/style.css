@@ -401,13 +401,34 @@ header {
     align-items: center;
 }
 .checkout-left{
-    width: 40%;
-    height: 60%;
+    width: 80%;
+    height: 75%;
     padding: 10px;
-    justify-content: center;
     border: 8px solid var(--brown);
     border-radius: 10px;
     box-shadow: 3px 3px 10px var(--brown);
+}
+.checkout-left-all{
+    width: 50%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.payment-info{
+    width: 80%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    border: 8px solid var(--brown);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px var(--brown);
+}
+.hidden{
+    display: none;
 }
 .checkout-left form{
     width: 100%;
@@ -415,7 +436,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 form .checkout-info{
     width: 100%;
@@ -464,6 +485,9 @@ form .checkout-shipping h3{
     background: var(--brown);
     color: var(--white);
 }
+
+
+
 
 .checkout-right{
     width: 40%;
