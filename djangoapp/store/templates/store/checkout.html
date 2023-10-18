@@ -19,11 +19,11 @@
                     
                     <div class="checkout-shipping" id="shipping-info">
                         <h3> Informações de envio :</h3>
-                            <input class="form-field" type="text" name="address" placeholder="Endereço">
-                            <input class="form-field" type="text" name="city" placeholder="Cidade">
-                            <input class="form-field" type="text" name="state" placeholder="Estado">
-                            <input class="form-field" type="text" name="zipcode" placeholder="CEP">
-                            <input class="form-field" type="text" name="country" placeholder="País">
+                            <input class="form-field" type="text" name="endereco" placeholder="Endereço">
+                            <input class="form-field" type="text" name="cidade" placeholder="Cidade">
+                            <input class="form-field" type="text" name="estado" placeholder="Estado">
+                            <input class="form-field" type="text" name="cep" placeholder="CEP">
+                            <input class="form-field" type="text" name="pais" placeholder="País">
                     </div>
     
                     <input id="form-button" class="form-button" type="submit" value="Continuar">
@@ -110,8 +110,9 @@
 </section>
 <script>
     var shipping = '{{pedido.shipping}}';
+    var total = '{{pedido.get_cart_total|floatformat:2}}'
 
-    if (shipping === 'False') {
+    if (shipping == 'False') {
         var shippingInfo = document.getElementById('shipping-info');
         shippingInfo.innerHTML = 'No momento não é necessário preencher informações de envio !';
         shippingInfo.style.textAlign = 'center';
@@ -141,6 +142,26 @@
 
     function submitFormData(){
         console.log('Botão de pagar clicado')
+        var userFormData={
+            'name':form.name.value,
+            'email':form.email.value,
+            'total':total,
+        }
+        var shippingFormData={
+            'endereco':null,
+            'cidade':null,
+            'estado':null,
+            'cep':null,
+        }
+
+        if (shipping != 'False'){
+            shippingFormData.endereco = form.endereco.value
+            shippingFormData.cidade = form.cidade.value
+            shippingFormData.estado = form.estado.value
+            shippingFormData.cep = form.cep.value
+        }
+
+        console.log(userFormData,shippingFormData)
     }
 
     
