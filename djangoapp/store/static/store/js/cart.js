@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('User :' ,user)
 
             if(user=="AnonymousUser"){
-                console.log('User Unlogged')
+                addCookieItem(productId, action)
             }else{
                 updateUserOrder(productId, action)
             }
@@ -34,5 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((data)=>{
             location.reload()
         });
+    }
+    function addCookieItem(productId, action){
+        console.log('Usuario nao logado')
     }
 });
