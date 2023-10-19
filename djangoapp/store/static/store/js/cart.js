@@ -44,5 +44,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 cart[productId]['quantidade'] += 1
             }
         }
+        if (action == 'remove'){
+            cart[productId]['quantidade'] -= 1
+
+            if (cart[productId]['quantidade']<=0){
+                console.log('Produto removido do carrinho')
+                delete cart[productId]
+            }
+        }
     }
 });
