@@ -36,6 +36,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     function addCookieItem(productId, action){
-        console.log('Usuario nao logado')
+        if (action == 'add'){
+            if(cart[productId]==undefined){
+                cart[productId]={'quantitade':1}
+            }
+            else{
+                cart[productId]['quantidade'] += 1
+            }
+        }
     }
 });
