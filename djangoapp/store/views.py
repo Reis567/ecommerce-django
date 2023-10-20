@@ -93,6 +93,10 @@ def cart(request):
             }
             print(item)
             items.append(item)
+
+            if produto.digital == False:
+                pedido['shipping'] = True
+
         
     context={'items':items,
              'pedido':pedido ,
