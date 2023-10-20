@@ -71,32 +71,34 @@ def cart(request):
         itemsCarrinho = pedido['get_cart_items']
 
         for i in cart :
-            print(cart[i])
-            itemsCarrinho += cart[i]['quantidade']
+            try:
+                print(cart[i])
+                itemsCarrinho += cart[i]['quantidade']
 
-            produto = Produto.objects.get(id=i)
-            print(produto)
-            total = (produto.price * cart[i]['quantidade'])
+                produto = Produto.objects.get(id=i)
+                print(produto)
+                total = (produto.price * cart[i]['quantidade'])
 
-            pedido['get_cart_total'] += total
-            pedido['get_cart_items'] += cart[i]['quantidade']
+                pedido['get_cart_total'] += total
+                pedido['get_cart_items'] += cart[i]['quantidade']
 
-            item = {
-                'produto':{
-                    'id':produto.id,
-                    'nome':produto.nome,
-                    'price':produto.price,
-                    'foto':produto.foto.url
-                },
-                'quantidade':cart[i]['quantidade'],
-                'get_total':total
-            }
-            print(item)
-            items.append(item)
+                item = {
+                    'produto':{
+                        'id':produto.id,
+                        'nome':produto.nome,
+                        'price':produto.price,
+                        'foto':produto.foto.url
+                    },
+                    'quantidade':cart[i]['quantidade'],
+                    'get_total':total
+                }
+                print(item)
+                items.append(item)
 
-            if produto.digital == False:
-                pedido['shipping'] = True
-
+                if produto.digital == False:
+                    pedido['shipping'] = True
+            except:
+                print('Item nao existe')
         
     context={'items':items,
              'pedido':pedido ,
