@@ -73,6 +73,12 @@ def cart(request):
         for i in cart :
             print(cart[i])
             itemsCarrinho += cart[i]['quantidade']
+
+            produto = Produto.objects.get(id=i)
+            total = (produto.price * cart[i]['quantidade'])
+
+            pedido['get_cart_total'] += total
+            pedido['get_cart_items'] += cart[i]['quantidade']
         
     context={'items':items,
              'pedido':pedido ,
