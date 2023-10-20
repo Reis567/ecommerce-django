@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if(user=="AnonymousUser"){
                 addCookieItem(productId, action)
+                console.log('Unlog user')
             }else{
                 updateUserOrder(productId, action)
             }
@@ -38,7 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function addCookieItem(productId, action){
         if (action == 'add'){
             if(cart[productId]==undefined){
-                cart[productId]={'quantitade':1}
+                cart[productId]={'quantidade':1}
+                console.log('ADD')
             }
             else{
                 cart[productId]['quantidade'] += 1
@@ -46,11 +48,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (action == 'remove'){
             cart[productId]['quantidade'] -= 1
+            console.log('REMOVE')
 
             if (cart[productId]['quantidade']<=0){
                 console.log('Produto removido do carrinho')
                 delete cart[productId]
             }
         }
+        console.log('Carrinho :',cart)
+        document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+        location.reload()
     }
 });

@@ -55,12 +55,25 @@ def cart(request):
         items = pedido.itemdepedido_set.all()
         itemsCarrinho = pedido.get_cart_items
     else:
+        try:
+            cart = json.loads(request.COOKIES['cart'])
+        except:
+            print('New user')
+            cart= {}
+
+
+        print('Carrinho: ', cart)
         items = []
         pedido = {'get_cart_total':0,
                   'get_cart_items':0,
                   'shipping':False,
                   }
         itemsCarrinho = pedido['get_cart_items']
+
+        for i in cart :
+            print(cart[i])
+            itemsCarrinho += cart[i]['quantidade']
+        
     context={'items':items,
              'pedido':pedido ,
             'itemsCarrinho':itemsCarrinho,}
