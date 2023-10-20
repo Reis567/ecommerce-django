@@ -18,12 +18,11 @@ def home(request):
         items = pedido.itemdepedido_set.all()
         itemsCarrinho = pedido.get_cart_items
     else:
-        items = []
-        pedido = {'get_cart_total':0,
-                  'get_cart_items':0,
-                  'shipping':False,
-                  }
-        itemsCarrinho = pedido['get_cart_items']
+        cookieData = cookieCart(request)
+
+        itemsCarrinho = cookieData['itemsCarrinho']
+        pedido = cookieData['pedido']
+        items = cookieData['items']
     produtos = Produto.objects.all()
 
     produtos_por_pagina = 6
@@ -79,12 +78,11 @@ def checkout(request):
         items = pedido.itemdepedido_set.all()
         itemsCarrinho = pedido.get_cart_items
     else:
-        items = []
-        pedido = {'get_cart_total':0,
-                  'get_cart_items':0,
-                  'shipping':False,
-                  }
-        itemsCarrinho = pedido['get_cart_items']
+        cookieData = cookieCart(request)
+
+        itemsCarrinho = cookieData['itemsCarrinho']
+        pedido = cookieData['pedido']
+        items = cookieData['items']
     context={'items':items,
              'pedido':pedido ,
             'itemsCarrinho':itemsCarrinho,}
