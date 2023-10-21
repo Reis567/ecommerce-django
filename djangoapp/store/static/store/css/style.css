@@ -77,12 +77,18 @@ header {
 
 .auth-buttons button{
     background-color: var(--white);
+    border: 3px solid transparent;
+
     color: var(--black);
     padding: 10px 15px;
     border-radius: 8px;
     margin: 0 15px;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
+.auth-buttons button:hover{
+    border: 3px solid var(--black);
+    box-shadow: inset 1px 1px 8px var(--black);}
 .auth-buttons h5{
     color: var(--white);
     font-size: 22px;
