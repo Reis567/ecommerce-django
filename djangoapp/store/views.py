@@ -8,6 +8,9 @@ import datetime
 from django.views.decorators.csrf import csrf_exempt
 from decimal import Decimal
 from .utils import *
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
 
 # Create your views here.
 def home(request):
@@ -159,3 +162,18 @@ def processOrder(request):
         print('Usuário não logado')
     print(request.body)
     return JsonResponse('Payment done', safe=False)
+
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)  # Faça o login automaticamente após o registro
+            # Se necessário, associe o usuário a um perfil de comprador aqui
+            return redirect('store:home')  # Redirecione para a página inicial após o registro
+
+    else:
+        form = UserCreationForm()
+    return render(request, 'store/register.html', {'form': form})
