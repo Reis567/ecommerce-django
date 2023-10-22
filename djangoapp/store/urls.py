@@ -22,7 +22,7 @@ urlpatterns = [
     path('processOrder/', processOrder, name="processOrder"),
 
     #store:login
-    path('login/', CustomLoginView.as_view(), name='custom_login'),
+    path('login/', CustomLoginView.as_view(template_name='store/login.html'), name='custom_login'),
 
     #store:logout
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),

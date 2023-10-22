@@ -194,8 +194,7 @@ def register(request):
             'form': form,}
     return render(request, 'store/register.html', context)
 
-class CustomLoginView(LoginView):
-    template_name = 'store/login.html'  
+class CustomLoginView(LoginView):  
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

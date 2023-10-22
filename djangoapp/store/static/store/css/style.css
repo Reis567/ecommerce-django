@@ -692,6 +692,24 @@ form .checkout-shipping h3{
     border: 2px solid var(--white);
 
 }
+
+.login{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-content{
+    width: 30%;
+    height: 35%;
+    border: 3px solid var(--brown);
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {
