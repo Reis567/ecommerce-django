@@ -562,10 +562,13 @@ form .checkout-shipping h3{
     font-size: 25px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    border: 3px solid var(--black);
 }
 .form-button:hover{
     background: var(--brown);
     color: var(--white);
+    border: 3px solid var(--white);
+    box-shadow: 2px 2px 8px var(--black);
 }
 
 
@@ -596,13 +599,15 @@ form .checkout-shipping h3{
 .checkout-right-infos1 a{
     padding: 10px;
     background: var(--white);
-    border: 1px solid var(--brown);
+    border: 3px solid var(--brown);
     transition: 0.3s ease-in-out;
     border-radius: 10px;
+    box-shadow: 2px 2px 8px var(--black);
 }
 .checkout-right-infos1 a:hover{
     background: var(--brown);
     color: var(--white);
+    border: 3px solid var(--white);
 }
 .checkout-right-infos2{
     width: 100%;
