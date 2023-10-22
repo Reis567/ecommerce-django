@@ -11,6 +11,7 @@ from .utils import *
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
+from django.contrib.auth.views import LoginView
 
 # Create your views here.
 def home(request):
@@ -166,14 +167,32 @@ def processOrder(request):
 
 
 def register(request):
+    if request.user.is_authenticated:
+            comprador = request.user.comprador
+            pedido , created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
+            items = pedido.itemdepedido_set.all()
+            itemsCarrinho = pedido.get_cart_items
+    else:
+            cookieData = cookieCart(request)
+
+            itemsCarrinho = cookieData['itemsCarrinho']
+            pedido = cookieData['pedido']
+            items = cookieData['items']
+
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)  # Faça o login automaticamente após o registro
-            # Se necessário, associe o usuário a um perfil de comprador aqui
-            return redirect('store:home')  # Redirecione para a página inicial após o registro
+            login(request, user) 
+            return redirect('store:home') 
 
     else:
         form = UserCreationForm()
-    return render(request, 'store/register.html', {'form': form})
+    context={'items':items,
+             'pedido':pedido ,
+            'itemsCarrinho':itemsCarrinho,
+            'form': form,}
+    return render(request, 'store/register.html', context)
+
+class CustomLoginView(LoginView):
+    template_name = 'store/login.html'
