@@ -416,9 +416,13 @@ header {
     cursor: pointer;
     transition: 0.3s ease-in-out;
     margin-right: 30px;
+    border: 3px solid transparent;
+
 }
 .cart-items-value .checkout-btn:hover{
     background-color: var(--black);
+    border: 3px solid var(--white);
+    box-shadow: 2px 2px 8px var(--black);
 }
 .checkout-btn-div{
     width: 100%;
@@ -438,9 +442,12 @@ header {
     cursor: pointer;
     transition: 0.3s ease-in-out;
     margin-bottom: 25px;
+    border: 3px solid transparent;
 }
 .checkout-btn-end:hover{
     background-color: var(--black);
+    border: 3px solid var(--white);
+    box-shadow: 2px 2px 8px var(--black);
 }
 .cart-numbs{
     display: flex;
