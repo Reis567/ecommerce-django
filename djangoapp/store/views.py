@@ -12,6 +12,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
+from .forms import CustomUserCreationForm
 
 # Create your views here.
 def home(request):
@@ -168,30 +169,32 @@ def processOrder(request):
 
 def register(request):
     if request.user.is_authenticated:
-            comprador = request.user.comprador
-            pedido , created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
-            items = pedido.itemdepedido_set.all()
-            itemsCarrinho = pedido.get_cart_items
+        comprador = request.user.comprador
+        pedido , created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
+        items = pedido.itemdepedido_set.all()
+        itemsCarrinho = pedido.get_cart_items
     else:
-            cookieData = cookieCart(request)
-
-            itemsCarrinho = cookieData['itemsCarrinho']
-            pedido = cookieData['pedido']
-            items = cookieData['items']
+        cookieData = cookieCart(request)
+        itemsCarrinho = cookieData['itemsCarrinho']
+        pedido = cookieData['pedido']
+        items = cookieData['items']
 
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user) 
-            return redirect('store:home') 
+            login(request, user)
+            return redirect('store:home')
 
     else:
-        form = UserCreationForm()
-    context={'items':items,
-             'pedido':pedido ,
-            'itemsCarrinho':itemsCarrinho,
-            'form': form,}
+        form = CustomUserCreationForm()
+
+    context = {
+        'items': items,
+        'pedido': pedido,
+        'itemsCarrinho': itemsCarrinho,
+        'form': form,
+    }
     return render(request, 'store/register.html', context)
 
 class CustomLoginView(LoginView):  

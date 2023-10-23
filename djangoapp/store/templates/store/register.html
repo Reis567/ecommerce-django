@@ -5,11 +5,39 @@
 
 
 {% block content %}
-<section class="register">
+<div class="register">
     <div class="register-content">
+        <h2>Register</h2>
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="single-input">
+                {{ form.nome.label_tag }} 
+                {{ form.nome }}
+            </div>
+            <div class="single-input">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+            </div>
 
+            <div class="single-input">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+
+            <div class="single-input">
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+            </div>
+
+            <div class="single-input">
+                {{ form.password2.label_tag }}
+                {{ form.password2 }}
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
     </div>
-
-</section>
+</div>
 
 {% endblock content %}
