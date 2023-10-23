@@ -103,7 +103,7 @@ header {
     text-align: center;
     color: var(--white);
     background: red;
-    padding: 6px;
+    padding: 6px 8px;
     border-radius: 50%;
     font-size: 13px;
     font-style: normal;
@@ -231,6 +231,19 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 10px var(--black);
     border: 3px solid var(--brown);
+    position: relative;
+}
+.favorite-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 6px 8px;
+    margin: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #341d08;
+    color: var(--white);
 }
 .prod-img {
     display: flex;
@@ -701,14 +714,151 @@ form .checkout-shipping h3{
     align-items: center;
 }
 .login-content{
-    width: 30%;
-    height: 35%;
-    border: 3px solid var(--brown);
+    width: 25%;
+    height: 40%;
+    border: 5px solid var(--brown);
     border-radius: 13px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 8px var(--brown);
+
+
 }
+.login-content h2{
+    font-size: 35px;
+}
+
+.login-content form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    
+}
+.login-content form button{
+    margin-top: 30px;
+    padding: 20px;
+    border: 3px solid var(--brown);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+.login-content form button:hover{
+    background: var(--brown);
+    border: 3px solid var(--white);
+    box-shadow: 1px 2px 8px var(--black);
+    color: var(--white);
+    cursor: pointer;
+}
+.login-content .single-input{
+    margin-top: 30px;
+}
+.login-content .single-input input{
+    outline: none;
+    border: none;
+    
+}
+.login-content .single-input{
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--brown);
+    transition: 0.3s ease-in-out;
+
+}
+
+.login-content .single-input label{
+    position: absolute;
+    top: -15px;
+    left: -5px;
+    padding: 5px;
+    background: var(--white);
+    font-size: 13px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.register{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-content{
+    width: 25%;
+    height: 60%;
+    border: 5px solid var(--brown);
+    border-radius: 13px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 8px var(--brown);
+
+
+}
+.register-content h2{
+    font-size: 35px;
+}
+.register-content form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    
+}
+
+.register-content form button{
+    margin-top: 30px;
+    padding: 20px;
+    border: 3px solid var(--brown);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.register-content form button:hover{
+    background: var(--brown);
+    border: 3px solid var(--white);
+    box-shadow: 1px 2px 8px var(--black);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.register-content .single-input{
+    margin-top: 30px;
+    width: 100%;
+}
+.register-content .single-input input{
+    outline: none;
+    border: none;
+    
+}
+.register-content .single-input{
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--brown);
+    transition: 0.3s ease-in-out;
+
+}
+
+.register-content .single-input label{
+    position: absolute;
+    top: -15px;
+    left: -5px;
+    padding: 5px;
+    background: var(--white);
+    font-size: 13px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
 
 /* Celulares */
 @media(max-width:480px){

@@ -171,7 +171,16 @@ def lista_pedidos(request):
     if request.user.is_authenticated:
         comprador = request.user.comprador
         pedidos = Pedido.objects.filter(comprador=comprador)
-        context = {'pedidos': pedidos}
+
+        pedidos_info = []
+
+        for pedido in pedidos:
+            cart_total = pedido.get_cart_total
+            cart_items = pedido.get_cart_items
+            pedido_data = pedido.data_pedido.strftime("%B %d, %Y")  # Formate a data para a exibição desejada
+            pedidos_info.append({'pedido': pedido, 'cart_total': cart_total, 'cart_items': cart_items, 'pedido_data': pedido_data})
+
+        context = {'pedidos_info': pedidos_info}
         return render(request, 'store/lista_pedidos.html', context)
     else:
         return redirect('store:custom_login')

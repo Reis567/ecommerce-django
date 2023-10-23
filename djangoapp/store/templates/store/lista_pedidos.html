@@ -2,18 +2,21 @@
 {% load static %}
 
 {% block title %}Meus Pedidos - {% endblock title %}
-
 {% block content %}
-<section class="meus-pedidos">
-    <h1>Meus Pedidos</h1>
-    <ul>
-        {% for pedido in pedidos %}
-            <li>
-                <a href="#">Pedido #{{ pedido.id }}</a>
-            </li>
-        {% empty %}
-            <li>Você não tem pedidos.</li>
-        {% endfor %}
-    </ul>
+<section class="pedidos">
+    <div class="pedidos-content">
+        <h1>Meus Pedidos</h1>
+        <ul>
+            {% for info in pedidos_info %}
+                <li>
+                    Pedido #{{ info.pedido.id }} - Data: {{ info.pedido_data }}
+                    <p>Cart Total: R$ {{ info.cart_total|floatformat:2 }}</p>
+                    <p>Cart Items: {{ info.cart_items }}</p>
+                </li>
+            {% empty %}
+                <li>Você não tem pedidos.</li>
+            {% endfor %}
+        </ul>
+    </div>
 </section>
 {% endblock content %}
