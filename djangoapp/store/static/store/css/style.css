@@ -721,6 +721,7 @@ form .checkout-shipping h3{
 .login-content form{
     display: flex;
     flex-direction: column;
+    width: 70%;
     
 }
 .login-content form button{
@@ -776,7 +777,7 @@ form .checkout-shipping h3{
 }
 .register-content{
     width: 25%;
-    height: 50%;
+    height: 60%;
     border: 5px solid var(--brown);
     border-radius: 13px;
     display: flex;
@@ -794,6 +795,7 @@ form .checkout-shipping h3{
 .register-content form{
     display: flex;
     flex-direction: column;
+    width: 90%;
     
 }
 
@@ -815,7 +817,34 @@ form .checkout-shipping h3{
     cursor: pointer;
 }
 
+.register-content .single-input{
+    margin-top: 30px;
+    width: 100%;
+}
+.register-content .single-input input{
+    outline: none;
+    border: none;
+    
+}
+.register-content .single-input{
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--brown);
+    transition: 0.3s ease-in-out;
 
+}
+
+.register-content .single-input label{
+    position: absolute;
+    top: -15px;
+    left: -5px;
+    padding: 5px;
+    background: var(--white);
+    font-size: 13px;
+    border-radius: 10px;
+    font-weight: bold;
+}
 
 
 /* Celulares */

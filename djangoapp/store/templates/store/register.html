@@ -12,26 +12,30 @@
             {% csrf_token %}
             
             <div class="single-input">
-                <label for="id_nome"></label>
+                <label for="id_nome">
+                    Nome
+                </label>
                 {{ form.nome }}
             </div>
             <div class="single-input">
-                <label for="id_username"></label>
+                <label for="id_username">
+                    Username
+                </label>
                 {{ form.username }}
             </div>
 
             <div class="single-input">
-                <label for="id_email"></label>
+                <label for="id_email">Email</label>
                 {{ form.email }}
             </div>
 
             <div class="single-input">
-                <label for="id_password1"></label>
+                <label for="id_password1">Senha</label>
                 {{ form.password1 }}
             </div>
 
             <div class="single-input">
-                <label for="id_password2"></label>
+                <label for="id_password2">Confirmar senha</label>
                 {{ form.password2 }}
             </div>
 
