@@ -48,3 +48,8 @@ def cookieCart(request):
                 print('Item nao existe')
     
         return {'itemsCarrinho':itemsCarrinho,'pedido':pedido, 'items':items }
+
+
+
+
+

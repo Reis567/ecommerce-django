@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home,checkout,cart,updateItem,processOrder,register
+from .views import home,checkout,cart,updateItem,processOrder,register,lista_pedidos
 from django.contrib.auth import views as auth_views
 from .views import CustomLoginView
 
@@ -20,6 +20,9 @@ urlpatterns = [
 
     #store:processOrder
     path('processOrder/', processOrder, name="processOrder"),
+
+    #store:lista_pedidos
+    path('pedidos/', lista_pedidos, name='lista_pedidos'),
 
     #store:login
     path('login/', CustomLoginView.as_view(template_name='store/login.html'), name='custom_login'),
