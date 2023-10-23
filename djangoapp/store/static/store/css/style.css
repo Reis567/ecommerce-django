@@ -231,6 +231,19 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 10px var(--black);
     border: 3px solid var(--brown);
+    position: relative;
+}
+.favorite-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 6px 8px;
+    margin: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #341d08;
+    color: var(--white);
 }
 .prod-img {
     display: flex;

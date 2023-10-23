@@ -34,6 +34,9 @@
         <div class="home-products">
             {% for produto in produtos %}
             <div class="prod-card">
+                <div class="favorite-btn">
+                    <i class="bi bi-star-fill"></i>
+                </div>
                 <div class="prod-img">
                     {% if produto.foto %}
                         <img src="{{ produto.foto.url }}" alt="">
