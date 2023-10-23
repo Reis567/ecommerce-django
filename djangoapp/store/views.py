@@ -167,6 +167,16 @@ def processOrder(request):
 
 
 
+def lista_pedidos(request):
+    if request.user.is_authenticated:
+        comprador = request.user.comprador
+        pedidos = Pedido.objects.filter(comprador=comprador)
+        context = {'pedidos': pedidos}
+        return render(request, 'store/lista_pedidos.html', context)
+    else:
+        return redirect('store:custom_login')
+
+
 def register(request):
     if request.user.is_authenticated:
         comprador = request.user.comprador
