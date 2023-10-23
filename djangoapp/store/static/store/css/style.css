@@ -701,14 +701,72 @@ form .checkout-shipping h3{
     align-items: center;
 }
 .login-content{
-    width: 30%;
-    height: 35%;
-    border: 3px solid var(--brown);
+    width: 25%;
+    height: 40%;
+    border: 5px solid var(--brown);
     border-radius: 13px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 8px var(--brown);
+
+
 }
+.login-content h2{
+    font-size: 35px;
+}
+
+.login-content form{
+    display: flex;
+    flex-direction: column;
+    
+}
+.login-content form button{
+    margin-top: 30px;
+    padding: 20px;
+    border: 3px solid var(--brown);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+.login-content form button:hover{
+    background: var(--brown);
+    border: 3px solid var(--white);
+    box-shadow: 1px 2px 8px var(--black);
+    color: var(--white);
+    cursor: pointer;
+}
+.login-content .single-input{
+    margin-top: 30px;
+}
+.login-content .single-input input{
+    outline: none;
+    border: none;
+    
+}
+.login-content .single-input{
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--brown);
+    transition: 0.3s ease-in-out;
+
+}
+
+.login-content .single-input label{
+    position: absolute;
+    top: -15px;
+    left: -5px;
+    padding: 5px;
+    background: var(--white);
+    font-size: 13px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
 
 /* Celulares */
 @media(max-width:480px){

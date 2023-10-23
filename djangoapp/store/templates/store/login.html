@@ -7,9 +7,23 @@
 {% block content %}
 <section class="login">
     <div class="login-content">
-        <h3>
-            Login
-        </h3>
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="single-input">
+                <label for="id_username">
+                    Nome de usuário
+                </label>
+                {{ form.username }}
+            </div>
+            <div class="single-input">
+                <label for="id_password">
+                    Senha
+                </label>
+                {{ form.password }}
+            </div>
+            
+            <button type="submit">Entrar</button>
     </div>
 
 </section>
