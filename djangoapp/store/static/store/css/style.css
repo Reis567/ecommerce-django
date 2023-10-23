@@ -788,6 +788,34 @@ form .checkout-shipping h3{
 
 
 }
+.register-content h2{
+    font-size: 35px;
+}
+.register-content form{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.register-content form button{
+    margin-top: 30px;
+    padding: 20px;
+    border: 3px solid var(--brown);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.register-content form button:hover{
+    background: var(--brown);
+    border: 3px solid var(--white);
+    box-shadow: 1px 2px 8px var(--black);
+    color: var(--white);
+    cursor: pointer;
+}
+
+
 
 
 /* Celulares */
