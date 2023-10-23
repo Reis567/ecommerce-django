@@ -1,0 +1,19 @@
+{% extends "store/base.html" %}
+{% load static %}
+
+{% block title %}Meus Pedidos - {% endblock title %}
+
+{% block content %}
+<section class="meus-pedidos">
+    <h1>Meus Pedidos</h1>
+    <ul>
+        {% for pedido in pedidos %}
+            <li>
+                <a href="#">Pedido #{{ pedido.id }}</a>
+            </li>
+        {% empty %}
+            <li>Você não tem pedidos.</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock content %}
