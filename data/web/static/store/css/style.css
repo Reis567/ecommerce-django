@@ -128,6 +128,7 @@ header {
     margin-left:-230px;
     transition:all 0.3s;
     border-bottom-right-radius: 10px;
+    z-index: 1;
   }
   .active{
     margin-left:0px;
@@ -859,6 +860,48 @@ form .checkout-shipping h3{
     font-weight: bold;
 }
 
+.pedidos{
+    height: 100vh;
+    width: 100%;
+}
+
+.pedidos-content{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.pedidos-content .pedidos-title{
+    margin-bottom: 50px;
+    font-size: 50px;
+}
+.pedidos-list{
+    width: 70%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid var(--black);
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    }
+.pedido-link{
+    padding: 10px;
+    border: 3px solid var(--brown);
+    border-radius: 10px;
+    color: var(--black);
+    transition: 0.3s ease-in-out;
+    text-align: center;
+}
+.pedido-link:hover{
+    background: var(--brown);
+    color: var(--white);
+    box-shadow: inset 0 0  1px var(--white);
+
+}
 
 /* Celulares */
 @media(max-width:480px){

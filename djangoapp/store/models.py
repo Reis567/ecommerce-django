@@ -29,7 +29,7 @@ class Produto(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2)
     digital = models.BooleanField(default=False, null=True, blank=True)
     foto = models.ImageField( null=True, blank=True)
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return self.nome
