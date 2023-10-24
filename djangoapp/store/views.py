@@ -17,7 +17,7 @@ from .forms import CustomUserCreationForm
 
 # Create your views here.
 def home(request):
-
+    categorias = Categoria.objects.all()
     if request.user.is_authenticated:
         comprador = request.user.comprador
         pedido , created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
@@ -49,7 +49,8 @@ def home(request):
         produtos = paginator.page(paginator.num_pages)
 
     context = {'produtos': produtos,
-               'itemsCarrinho':itemsCarrinho,}
+               'itemsCarrinho':itemsCarrinho,
+               'categorias':categorias,}
 
     return render(request, 'store/home.html', context)
 

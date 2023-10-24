@@ -16,12 +16,11 @@
           Categorias
         </h3>
         <div class="content-sidebar">
-          <a href="#" class="menu-item">Categoria1</a>
-          <a href="#" class="menu-item">Categoria1</a>
-          <a href="#" class="menu-item">Categoria1</a>
-          <a href="#" class="menu-item">Categoria1</a>
-          <a href="#" class="menu-item">Categoria1</a>
-          <a href="#" class="menu-item">Categoria1</a>
+            {% if categorias %}
+                    {% for categoria in categorias %}
+                        <a href="#" class="menu-item">{{categoria.nome}}</a>
+                    {% endfor %}
+            {% endif %}
         </div>
       </div>
         <div class="home-title">
