@@ -871,11 +871,21 @@ form .checkout-shipping h3{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow-y: scroll;
 }
 .pedidos-content .pedidos-title{
     margin-bottom: 50px;
 }
-
+.pedidos-list{
+    width: 70%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid var(--black);
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    }
 
 /* Celulares */
 @media(max-width:480px){

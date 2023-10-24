@@ -181,7 +181,7 @@ def lista_pedidos(request):
         for pedido in pedidos:
             cart_total = pedido.get_cart_total
             cart_items = pedido.get_cart_items
-            pedido_data = pedido.data_pedido.strftime("%B %d, %Y")  # Formate a data para a exibição desejada
+            pedido_data = pedido.data_pedido.strftime("%B %d, %Y") 
             pedidos_info.append({'pedido': pedido, 'cart_total': cart_total, 'cart_items': cart_items, 'pedido_data': pedido_data})
 
         context = {'pedidos_info': pedidos_info,

@@ -9,8 +9,8 @@
             {% for pedido in pedidos_info %}
                 <div class="pedidos-list">
                     <h1>Pedido #{{ pedido.pedido.id }} - Data: {{ pedido.pedido_data }}</h1>
-                    <h3>Cart Total: R$ {{ pedido.cart_total|floatformat:2 }}</h3>
-                    <h3>Cart Items: {{ pedido.cart_items }}</h3>
+                    <h3>Valor Total: R$ {{ pedido.cart_total|floatformat:2 }}</h3>
+                    <h3>Quantidade: {{ pedido.cart_items }}</h3>
                 </div>
             {% empty %}
                 <div class="pedidos-none">Você não tem pedidos.</div>
