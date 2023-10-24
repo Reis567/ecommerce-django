@@ -172,6 +172,10 @@ def lista_pedidos(request):
         comprador = request.user.comprador
         pedidos = Pedido.objects.filter(comprador=comprador)
 
+        pedido , created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
+        items = pedido.itemdepedido_set.all()
+        itemsCarrinho = pedido.get_cart_items
+
         pedidos_info = []
 
         for pedido in pedidos:
@@ -180,7 +184,10 @@ def lista_pedidos(request):
             pedido_data = pedido.data_pedido.strftime("%B %d, %Y")  # Formate a data para a exibição desejada
             pedidos_info.append({'pedido': pedido, 'cart_total': cart_total, 'cart_items': cart_items, 'pedido_data': pedido_data})
 
-        context = {'pedidos_info': pedidos_info}
+        context = {'pedidos_info': pedidos_info,
+                   'items': items,
+                    'pedido': pedido,
+                    'itemsCarrinho': itemsCarrinho,}
         return render(request, 'store/lista_pedidos.html', context)
     else:
         return redirect('store:custom_login')
