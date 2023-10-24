@@ -15,7 +15,14 @@ class Comprador(models.Model):
         verbose_name = "Comprador"
         verbose_name_plural = "Compradores"
     
+class Categoria(models.Model):
+    nome = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.nome
+    class Meta:
+        verbose_name = "Categoria"
+        verbose_name_plural = "Categorias"
 
 class Produto(models.Model):
     nome = models.CharField(max_length=200)
