@@ -5,6 +5,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import JsonResponse
 import json
 import datetime
+import calendar
 from django.views.decorators.csrf import csrf_exempt
 from decimal import Decimal
 from .utils import *
@@ -168,6 +169,20 @@ def processOrder(request):
 
 
 def lista_pedidos(request):
+    months_translation = {
+    'January': 'Janeiro',
+    'February': 'Fevereiro',
+    'March': 'Março',
+    'April': 'Abril',
+    'May': 'Maio',
+    'June': 'Junho',
+    'July': 'Julho',
+    'August': 'Agosto',
+    'September': 'Setembro',
+    'October': 'Outubro',
+    'November': 'Novembro',
+    'December': 'Dezembro',
+}
     if request.user.is_authenticated:
         comprador = request.user.comprador
         pedidos = Pedido.objects.filter(comprador=comprador)
@@ -181,7 +196,9 @@ def lista_pedidos(request):
         for pedido in pedidos:
             cart_total = pedido.get_cart_total
             cart_items = pedido.get_cart_items
-            pedido_data = pedido.data_pedido.strftime("%B %d, %Y") 
+            month_name = pedido.data_pedido.strftime("%B")
+            month_name_pt = months_translation.get(month_name, month_name)
+            pedido_data = pedido.data_pedido.strftime("%d de ") + month_name_pt + pedido.data_pedido.strftime(" de %Y")
             pedidos_info.append({'pedido': pedido, 'cart_total': cart_total, 'cart_items': cart_items, 'pedido_data': pedido_data})
 
         context = {'pedidos_info': pedidos_info,
