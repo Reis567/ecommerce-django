@@ -29,7 +29,13 @@ def home(request):
         itemsCarrinho = cookieData['itemsCarrinho']
         pedido = cookieData['pedido']
         items = cookieData['items']
-    produtos = Produto.objects.all()
+    
+    categoria_selecionada = request.GET.get('categoria')
+    if categoria_selecionada:
+        categoria = Categoria.objects.get(id=categoria_selecionada)
+        produtos = Produto.objects.filter(categoria=categoria)
+    else:
+        produtos = Produto.objects.all()
 
     produtos_por_pagina = 6
 
@@ -51,7 +57,6 @@ def home(request):
     context = {'produtos': produtos,
                'itemsCarrinho':itemsCarrinho,
                'categorias':categorias,}
-
     return render(request, 'store/home.html', context)
 
 def cart(request):

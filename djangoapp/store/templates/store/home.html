@@ -18,7 +18,7 @@
         <div class="content-sidebar">
             {% if categorias %}
                     {% for categoria in categorias %}
-                        <a href="#" class="menu-item">{{categoria.nome}}</a>
+                        <a href="?categoria={{ categoria.id }}" class="menu-item">{{categoria.nome}}</a>
                     {% endfor %}
             {% endif %}
         </div>
