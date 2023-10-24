@@ -5,7 +5,7 @@
 {% block content %}
 <section class="pedidos">
     <div class="pedidos-content">
-        <h1>Meus Pedidos</h1>
+        <h1 class="pedidos-title">Meus Pedidos</h1>
             {% for pedido in pedidos_info %}
                 <div class="pedidos-list">
                     <h1>Pedido #{{ pedido.pedido.id }} - Data: {{ pedido.pedido_data }}</h1>
