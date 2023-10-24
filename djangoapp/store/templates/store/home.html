@@ -16,6 +16,7 @@
           Categorias
         </h3>
         <div class="content-sidebar">
+                        <a href="{% url 'store:home' %}" class="menu-item first-item">Ver tudo</a>
             {% if categorias %}
                     {% for categoria in categorias %}
                         <a href="?categoria={{ categoria.id }}" class="menu-item">{{categoria.nome}}</a>
