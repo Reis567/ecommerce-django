@@ -70,8 +70,8 @@
     <div class="pagination">
         <span class="step-links pagination-btn">
             {% if produtos.has_previous %}
-                <a href="?page=1">&laquo; primeira</a>
-                <a href="?page={{ produtos.previous_page_number }}">anterior</a>
+                <a href="?page=1{% if categoria_selecionada %}&amp;categoria={{ categoria_selecionada }}{% endif %}">&laquo; primeira</a>
+                <a href="?page={{ produtos.previous_page_number }}{% if categoria_selecionada %}&amp;categoria={{ categoria_selecionada }}{% endif %}">anterior</a>
             {% endif %}
             
             <span class="current-page">
@@ -79,8 +79,8 @@
             </span>
             
             {% if produtos.has_next %}
-                <a href="?page={{ produtos.next_page_number }}">próxima</a>
-                <a href="?page={{ produtos.paginator.num_pages }}">última &raquo;</a>
+                <a href="?page={{ produtos.next_page_number }}{% if categoria_selecionada %}&amp;categoria={{ categoria_selecionada }}{% endif %}">próxima</a>
+                <a href="?page={{ produtos.paginator.num_pages }}{% if categoria_selecionada %}&amp;categoria={{ categoria_selecionada }}{% endif %}">última &raquo;</a>
             {% endif %}
         </span>
     </div>

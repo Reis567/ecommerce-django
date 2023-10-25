@@ -151,7 +151,11 @@ header {
     color:#ffffff;
     border-bottom:1px solid #000000;
     transition:0.3s ease-in-out;
-  
+    font-size: 13px;
+  }
+  .first-item{
+    font-weight: bold;
+    font-size: 18px;
   }
   .menu-item:hover{
     background:#000000;

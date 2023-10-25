@@ -54,9 +54,12 @@ def home(request):
         # Se a página estiver vazia (for maior que o número total de páginas), exiba a última página
         produtos = paginator.page(paginator.num_pages)
 
-    context = {'produtos': produtos,
-               'itemsCarrinho':itemsCarrinho,
-               'categorias':categorias,}
+    context = {
+        'produtos': produtos,
+        'itemsCarrinho': itemsCarrinho,
+        'categorias': categorias,
+        'categoria_selecionada': categoria_selecionada,  # Passar a categoria selecionada no contexto
+    }
     return render(request, 'store/home.html', context)
 
 def cart(request):
