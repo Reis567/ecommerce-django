@@ -203,26 +203,27 @@ def lista_pedidos(request):
         pedidos_info = []
 
         for pedido in pedidos:
-            cart_total = pedido.get_cart_total
-            cart_items = pedido.get_cart_items
-            month_name = pedido.data_pedido.strftime("%B")
-            month_name_pt = months_translation.get(month_name, month_name)
-            pedido_data = pedido.data_pedido.strftime("%d de ") + month_name_pt + pedido.data_pedido.strftime(" de %Y")
-            
-            # Acesse o primeiro item de pedido dentro do loop
-            primeiro_item = pedido.itemdepedido_set.first()
-            if primeiro_item:
-                foto_produto = primeiro_item.produto.foto
-            else:
-                foto_produto = 'caminho_para_imagem_padrao.jpg'
+            if pedido.completo  :
+                cart_total = pedido.get_cart_total
+                cart_items = pedido.get_cart_items
+                month_name = pedido.data_pedido.strftime("%B")
+                month_name_pt = months_translation.get(month_name, month_name)
+                pedido_data = pedido.data_pedido.strftime("%d de ") + month_name_pt + pedido.data_pedido.strftime(" de %Y")
+                
+                # Acesse o primeiro item de pedido dentro do loop
+                primeiro_item = pedido.itemdepedido_set.first()
+                if primeiro_item:
+                    foto_produto = primeiro_item.produto.foto
+                else:
+                    foto_produto = 'caminho_para_imagem_padrao.jpg'
 
-            pedidos_info.append({
-                'pedido': pedido,
-                'cart_total': cart_total,
-                'cart_items': cart_items,
-                'pedido_data': pedido_data,
-                'foto_produto': foto_produto,
-            })
+                pedidos_info.append({
+                    'pedido': pedido,
+                    'cart_total': cart_total,
+                    'cart_items': cart_items,
+                    'pedido_data': pedido_data,
+                    'foto_produto': foto_produto,
+                })
 
         context = {
             'pedidos_info': pedidos_info,
