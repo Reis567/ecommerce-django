@@ -14,7 +14,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
 from .forms import CustomUserCreationForm
-
+from django.shortcuts import get_object_or_404
 # Create your views here.
 def home(request):
     categorias = Categoria.objects.all()
@@ -238,7 +238,11 @@ def lista_pedidos(request):
 
 
 def detalhes_pedido(request):
-    context={}
+    pedido = get_object_or_404(Pedido, id=id)
+    context = {
+        'pedido': pedido,
+        
+    }
     return render(request, 'store/detalhes_pedido.html', context)
 
 def register(request):
