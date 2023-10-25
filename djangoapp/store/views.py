@@ -237,11 +237,11 @@ def lista_pedidos(request):
         return redirect('store:custom_login')
 
 
-def detalhes_pedido(request):
-    pedido = get_object_or_404(Pedido, id=id)
+def detalhes_pedido(request, id_transacao):
+    pedido = get_object_or_404(Pedido, id_transacao=id_transacao)
+
     context = {
         'pedido': pedido,
-        
     }
     return render(request, 'store/detalhes_pedido.html', context)
 
