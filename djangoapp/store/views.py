@@ -179,27 +179,27 @@ def processOrder(request):
 
 def lista_pedidos(request):
     months_translation = {
-    'January': 'Janeiro',
-    'February': 'Fevereiro',
-    'March': 'Março',
-    'April': 'Abril',
-    'May': 'Maio',
-    'June': 'Junho',
-    'July': 'Julho',
-    'August': 'Agosto',
-    'September': 'Setembro',
-    'October': 'Outubro',
-    'November': 'Novembro',
-    'December': 'Dezembro',
-}
+        'January': 'Janeiro',
+        'February': 'Fevereiro',
+        'March': 'Março',
+        'April': 'Abril',
+        'May': 'Maio',
+        'June': 'Junho',
+        'July': 'Julho',
+        'August': 'Agosto',
+        'September': 'Setembro',
+        'October': 'Outubro',
+        'November': 'Novembro',
+        'December': 'Dezembro',
+    }
+    
     if request.user.is_authenticated:
         comprador = request.user.comprador
         pedidos = Pedido.objects.filter(comprador=comprador)
-
         pedido , created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
         items = pedido.itemdepedido_set.all()
         itemsCarrinho = pedido.get_cart_items
-
+        
         pedidos_info = []
 
         for pedido in pedidos:
@@ -208,15 +208,33 @@ def lista_pedidos(request):
             month_name = pedido.data_pedido.strftime("%B")
             month_name_pt = months_translation.get(month_name, month_name)
             pedido_data = pedido.data_pedido.strftime("%d de ") + month_name_pt + pedido.data_pedido.strftime(" de %Y")
-            pedidos_info.append({'pedido': pedido, 'cart_total': cart_total, 'cart_items': cart_items, 'pedido_data': pedido_data})
+            
+            # Acesse o primeiro item de pedido dentro do loop
+            primeiro_item = pedido.itemdepedido_set.first()
+            if primeiro_item:
+                foto_produto = primeiro_item.produto.foto
+            else:
+                foto_produto = 'caminho_para_imagem_padrao.jpg'
 
-        context = {'pedidos_info': pedidos_info,
-                   'items': items,
-                    'pedido': pedido,
-                    'itemsCarrinho': itemsCarrinho,}
+            pedidos_info.append({
+                'pedido': pedido,
+                'cart_total': cart_total,
+                'cart_items': cart_items,
+                'pedido_data': pedido_data,
+                'foto_produto': foto_produto,
+            })
+
+        context = {
+            'pedidos_info': pedidos_info,
+            'items': items,
+            'pedido': pedido,
+            'itemsCarrinho': itemsCarrinho,
+            'foto_produto': foto_produto,
+        }
         return render(request, 'store/lista_pedidos.html', context)
     else:
         return redirect('store:custom_login')
+
 
 
 def register(request):
