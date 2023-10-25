@@ -237,6 +237,9 @@ def lista_pedidos(request):
         return redirect('store:custom_login')
 
 
+def detalhes_pedido(request):
+    context={}
+    return render(request, 'store/detalhes_pedido.html', context)
 
 def register(request):
     if request.user.is_authenticated:
