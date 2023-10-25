@@ -885,16 +885,22 @@ form .checkout-shipping h3{
 .pedidos-list{
     width: 70%;
     height: 10%;
+    max-height: 12%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
     border: 3px solid var(--black);
     margin-bottom: 20px;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
+    }
+.pedidos-list img{
+        max-width: 70px;
+        padding: 2px;
     }
 .pedido-link{
     padding: 10px;
-    border: 3px solid var(--brown);
     border-radius: 10px;
     color: var(--black);
     transition: 0.3s ease-in-out;
