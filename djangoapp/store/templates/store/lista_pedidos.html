@@ -7,8 +7,8 @@
     <div class="pedidos-content">
         <h1 class="pedidos-title">Meus Pedidos</h1>
             {% for pedido in pedidos_info %}
-            <a href="#" class="pedido-button">
                 <div class="pedidos-list">
+                    <a href="#" class="pedido-button"></a>
                     <img src="{{pedido.foto_produto.url}}" alt="foto">
                     <a href="#" class="pedido-link">
                         <h1>Pedido  {{ pedido.pedido.id }}</h1>
@@ -18,7 +18,6 @@
                     <h3> Data : {{ pedido.pedido_data }}</h3>
                     <h3>Quantidade : {{ pedido.cart_items }}</h3>
                 </div>
-            </a>
             {% empty %}
                 <div class="pedidos-none">
                     <h1>

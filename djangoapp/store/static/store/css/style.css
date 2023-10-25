@@ -882,6 +882,15 @@ form .checkout-shipping h3{
     margin-bottom: 50px;
     font-size: 50px;
 }
+.pedido-button{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
 .pedidos-list{
     width: 70%;
     height: 10%;
@@ -894,7 +903,8 @@ form .checkout-shipping h3{
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 10px;
-    }
+    position: relative;
+}
 .pedidos-list img{
         max-width: 70px;
         padding: 2px;
