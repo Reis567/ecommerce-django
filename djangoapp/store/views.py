@@ -15,7 +15,9 @@ from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
 from .forms import CustomUserCreationForm
 from django.shortcuts import get_object_or_404
-# Create your views here.
+
+
+
 def home(request):
     categorias = Categoria.objects.all()
     if request.user.is_authenticated:
@@ -239,11 +241,14 @@ def lista_pedidos(request):
 
 def detalhes_pedido(request, id_transacao):
     pedido = get_object_or_404(Pedido, id_transacao=id_transacao)
+    itens_do_pedido = pedido.itemdepedido_set.all()
 
     context = {
         'pedido': pedido,
+        'itens_do_pedido': itens_do_pedido,
     }
     return render(request, 'store/detalhes_pedido.html', context)
+
 
 def register(request):
     if request.user.is_authenticated:
