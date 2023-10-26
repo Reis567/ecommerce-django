@@ -913,7 +913,7 @@ form .checkout-shipping h3{
 
 }
 .pedidos-list{
-    width: 70%;
+    width: 60%;
     height: 10%;
     max-height: 12%;
     display: flex;
@@ -925,6 +925,9 @@ form .checkout-shipping h3{
     padding: 20px;
     border-radius: 10px;
     position: relative;
+}
+.pedido-data{
+    margin-right: 50px;
 }
 .pedidos-list img{
         max-width: 70px;

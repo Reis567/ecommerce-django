@@ -14,9 +14,7 @@
                         <h1>Pedido  {{ pedido.pedido.id }}</h1>
                     
                     </a>
-                    <h3>Valor Total : R$ {{ pedido.cart_total|floatformat:2 }}</h3>
-                    <h3> Data : {{ pedido.pedido_data }}</h3>
-                    <h3>Quantidade : {{ pedido.cart_items }}</h3>
+                    <h3 class="pedido-data"> Data : {{ pedido.pedido_data }}</h3>
                 </div>
             {% empty %}
                 <div class="pedidos-none">
