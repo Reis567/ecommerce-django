@@ -809,7 +809,7 @@ form .checkout-shipping h3{
 }
 .register-content{
     width: 25%;
-    height: 60%;
+    height: 65%;
     border: 5px solid var(--brown);
     border-radius: 13px;
     display: flex;
@@ -820,6 +820,13 @@ form .checkout-shipping h3{
     box-shadow: 2px 2px 8px var(--brown);
 
 
+}
+.haveAccount{
+    color: var(--black);
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
 }
 .register-content h2{
     font-size: 35px;
