@@ -944,6 +944,22 @@ form .checkout-shipping h3{
 
 }
 
+.pedidodetail{
+    height: 100vh;
+    width: 100%;
+}
+.pedidodetail-content{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pedidodetail-content img{
+    max-width: 50px;
+}
+
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {

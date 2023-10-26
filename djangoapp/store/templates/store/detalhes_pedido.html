@@ -5,9 +5,21 @@
 {% block content %}
 <section class="pedidodetail">
     <div class="pedidodetail-content">
-        <h1>
-            {{pedido.data_pedido}}
-        </h1>
+        <div class="pedidodetail-title">
+            <h1>Id Pedido : {{pedido.id}}</h1>
+            <h1>{{pedido.data_pedido}}</h1>
+        </div>
+        <h3>Itens do pedido :</h3>
+        {% for item in itens_do_pedido %}
+                <div class="item-do-pedido">
+                    <img src="{{ item.produto.foto.url }}" alt="{{ item.produto.nome }}">
+                    <h2>{{ item.produto.nome }}</h2>
+                    <p>Preço: R$ {{ item.produto.price }}</p>
+                    <p>Quantidade: {{ item.quantidade }}</p>
+                    <p>Total: R$ {{ item.get_total }}</p>
+                </div>
+        {% endfor %}
+
     </div>
 </section>
 {% endblock content %}
