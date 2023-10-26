@@ -994,6 +994,11 @@ form .checkout-shipping h3{
     color: var(--white);
     border-radius: 10px;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.nota-fiscal:hover{
+    background: var(--black);
+    box-shadow: 2px 2px 8px var(--black);
 }
 /* Celulares */
 @media(max-width:480px){
