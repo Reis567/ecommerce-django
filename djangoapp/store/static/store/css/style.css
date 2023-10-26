@@ -952,14 +952,24 @@ form .checkout-shipping h3{
     height: 80vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
 }
 .pedidodetail-content img{
     max-width: 50px;
 }
-
+.pedidodetail-title{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    border: 3px solid var(--brown);
+    border-radius: 10px;
+}
+.pedidodetail-content h1{
+    font-size: 30px;
+}
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {

@@ -9,7 +9,7 @@
             <h1>Id Pedido : {{pedido.id}}</h1>
             <h1>{{pedido.data_pedido}}</h1>
         </div>
-        <h3>Itens do pedido :</h3>
+        <h1>Itens do pedido :</h1>
         {% for item in itens_do_pedido %}
                 <div class="item-do-pedido">
                     <img src="{{ item.produto.foto.url }}" alt="{{ item.produto.nome }}">
