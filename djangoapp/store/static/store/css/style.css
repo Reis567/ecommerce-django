@@ -990,6 +990,10 @@ form .checkout-shipping h3{
 
 
 }
+.voltar-pedidos{
+    color: var(--black);
+    margin-bottom: 10px;
+}
 .nota-fiscal{
     padding: 10px;
     background: var(--brown);

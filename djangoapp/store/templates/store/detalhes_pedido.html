@@ -5,6 +5,10 @@
 {% block content %}
 <section class="pedidodetail">
     <div class="pedidodetail-content">
+        <a href="{% url 'store:lista_pedidos' %}" class="voltar-pedidos">
+            <i class="bi bi-arrow-left-short"></i>
+            Voltar aos pedidos
+        </a>
         <div class="pedidodetail-title">
             <h3>Id Pedido : {{pedido.id}}</h3>
             <h3>{{pedido.data_pedido}}</h3>
