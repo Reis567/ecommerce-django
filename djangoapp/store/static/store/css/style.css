@@ -987,7 +987,14 @@ form .checkout-shipping h3{
 
 
 }
-
+.nota-fiscal{
+    padding: 10px;
+    background: var(--brown);
+    margin-block: 20px;
+    color: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+}
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {
