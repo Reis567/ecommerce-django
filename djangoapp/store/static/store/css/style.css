@@ -720,7 +720,7 @@ form .checkout-shipping h3{
 }
 .login-content{
     width: 25%;
-    height: 40%;
+    height: 45%;
     border: 5px solid var(--brown);
     border-radius: 13px;
     display: flex;
@@ -731,6 +731,20 @@ form .checkout-shipping h3{
     box-shadow: 2px 2px 8px var(--brown);
 
 
+}
+.forgot-pass{
+    color: var(--black);
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 15px;
+}
+.noAccount{
+    color: var(--black);
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 15px;
 }
 .login-content h2{
     font-size: 35px;

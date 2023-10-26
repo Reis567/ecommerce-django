@@ -22,8 +22,10 @@
                 </label>
                 {{ form.password }}
             </div>
+            <a href="#" class="forgot-pass">Esqueceu sua senha ?</a>
             
             <button type="submit">Entrar</button>
+            <a href="{% url 'store:register' %}" class="noAccount">Ainda nâo tem uma conta ?</a>
     </div>
 
 </section>
