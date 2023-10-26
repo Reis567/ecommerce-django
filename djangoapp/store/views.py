@@ -240,12 +240,20 @@ def lista_pedidos(request):
 
 
 def detalhes_pedido(request, id_transacao):
-    pedido = get_object_or_404(Pedido, id_transacao=id_transacao)
-    itens_do_pedido = pedido.itemdepedido_set.all()
+    if request.user.is_authenticated:
+
+        pedido = get_object_or_404(Pedido, id_transacao=id_transacao)
+        itens_do_pedido = pedido.itemdepedido_set.all()
+        items = pedido.itemdepedido_set.all()
+        itemsCarrinho = pedido.get_cart_items
+    else:
+        return redirect('store:custom_login')
 
     context = {
         'pedido': pedido,
         'itens_do_pedido': itens_do_pedido,
+        'items': items,
+        'itemsCarrinho': itemsCarrinho,
     }
     return render(request, 'store/detalhes_pedido.html', context)
 

@@ -720,7 +720,7 @@ form .checkout-shipping h3{
 }
 .login-content{
     width: 25%;
-    height: 40%;
+    height: 45%;
     border: 5px solid var(--brown);
     border-radius: 13px;
     display: flex;
@@ -731,6 +731,20 @@ form .checkout-shipping h3{
     box-shadow: 2px 2px 8px var(--brown);
 
 
+}
+.forgot-pass{
+    color: var(--black);
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 15px;
+}
+.noAccount{
+    color: var(--black);
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 15px;
 }
 .login-content h2{
     font-size: 35px;
@@ -795,7 +809,7 @@ form .checkout-shipping h3{
 }
 .register-content{
     width: 25%;
-    height: 60%;
+    height: 65%;
     border: 5px solid var(--brown);
     border-radius: 13px;
     display: flex;
@@ -806,6 +820,13 @@ form .checkout-shipping h3{
     box-shadow: 2px 2px 8px var(--brown);
 
 
+}
+.haveAccount{
+    color: var(--black);
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
 }
 .register-content h2{
     font-size: 35px;
@@ -892,7 +913,7 @@ form .checkout-shipping h3{
 
 }
 .pedidos-list{
-    width: 70%;
+    width: 60%;
     height: 10%;
     max-height: 12%;
     display: flex;
@@ -904,6 +925,9 @@ form .checkout-shipping h3{
     padding: 20px;
     border-radius: 10px;
     position: relative;
+}
+.pedido-data{
+    margin-right: 50px;
 }
 .pedidos-list img{
         max-width: 70px;
@@ -923,6 +947,66 @@ form .checkout-shipping h3{
 
 }
 
+.pedidodetail{
+    height: 100vh;
+    width: 100%;
+}
+.pedidodetail-content{
+    margin-top: 90px;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.itens-tag{
+    margin-block: 20px;
+}
+.pedidodetail-content img{
+    max-width: 50px;
+}
+.pedidodetail-title{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    border: 3px solid var(--brown);
+    border-radius: 10px;
+}
+.pedidodetail-content h1{
+    font-size: 30px;
+}
+.item-do-pedido{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid var(--brown);
+    border-radius: 10px;
+    height: 100px;
+    margin-block: 10px;
+
+
+}
+.voltar-pedidos{
+    color: var(--black);
+    margin-bottom: 10px;
+}
+.nota-fiscal{
+    padding: 10px;
+    background: var(--brown);
+    margin-block: 20px;
+    color: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.nota-fiscal:hover{
+    background: var(--black);
+    box-shadow: 2px 2px 8px var(--black);
+}
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {
