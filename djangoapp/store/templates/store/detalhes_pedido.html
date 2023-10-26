@@ -9,16 +9,17 @@
             <h1>Id Pedido : {{pedido.id}}</h1>
             <h1>{{pedido.data_pedido}}</h1>
         </div>
-        <h1>Itens do pedido :</h1>
+        <h1 class="itens-tag">Itens do pedido :</h1>
         {% for item in itens_do_pedido %}
                 <div class="item-do-pedido">
                     <img src="{{ item.produto.foto.url }}" alt="{{ item.produto.nome }}">
-                    <h2>{{ item.produto.nome }}</h2>
+                    <h3>{{ item.produto.nome }}</h3>
                     <p>Preço: R$ {{ item.produto.price }}</p>
                     <p>Quantidade: {{ item.quantidade }}</p>
                     <p>Total: R$ {{ item.get_total }}</p>
                 </div>
         {% endfor %}
+        <button class="nota-fiscal">Nota fiscal</button>
 
     </div>
 </section>
