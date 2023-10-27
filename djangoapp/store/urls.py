@@ -2,6 +2,7 @@ from django.urls import path
 from .views import home,checkout,cart,updateItem,processOrder,register,lista_pedidos,detalhes_pedido,add_favorito, remove_favorito
 from django.contrib.auth import views as auth_views
 from .views import CustomLoginView
+from .views import FavoriteListView
 
 app_name = 'store'
 
@@ -41,6 +42,9 @@ urlpatterns = [
 
     #store:remove_favorito
     path('remove_favorito/', remove_favorito, name='remove_favorito'),
+
+    #store:favoritos
+    path('favoritos/',FavoriteListView.as_view(),name='favoritos')
 
 
 ]
