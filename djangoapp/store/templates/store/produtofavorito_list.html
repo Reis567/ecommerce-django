@@ -1,10 +1,18 @@
-{% extends "base.html" %}
+{% extends "store/base.html" %}
 {% load static %}
 {% block title %}Favoritos - {% endblock title %}
 
 {% block content %}
 
-{% for produto in object_list %}
+<section class="favoritos">
+        <div class="favoritos-content">
+                {% for favorito in object_list %}
+                        {{favorito.produto.nome}}
+                {% empty %}
+                        <h3>Sem favoritos</h3>
+                {% endfor %}
+        </div>
+
+</section>
     
-{% endfor %}
 {% endblock %}

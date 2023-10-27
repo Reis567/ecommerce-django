@@ -374,6 +374,10 @@ def remove_favorito(request):
 
     return JsonResponse({"error": "Usuário não autenticado."})
 
-@login_required
+
 class FavoriteListView(ListView):
     model = ProdutoFavorito
+
+    def get_queryset(self):
+        # Filtrar os objetos com favorito=True
+        return ProdutoFavorito.objects.filter(favorito=True)

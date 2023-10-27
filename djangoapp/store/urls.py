@@ -44,7 +44,7 @@ urlpatterns = [
     path('remove_favorito/', remove_favorito, name='remove_favorito'),
 
     #store:favoritos
-    path('favoritos/',FavoriteListView.as_view(),name='favoritos')
+    path('favoritos/',FavoriteListView.as_view(),name='favoritos'),
 
 
 ]
