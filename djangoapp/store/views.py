@@ -351,3 +351,23 @@ def add_favorito(request):
     else:
         return redirect('store:custom_login')
 
+def remove_favorito(request):
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            produto_id = request.POST.get("produto_id")
+            comprador = request.user.comprador
+
+            try:
+                produto_favorito = ProdutoFavorito.objects.get(
+                    comprador=comprador,
+                    produto_id=produto_id,
+                )
+                produto_favorito.favorito = False
+                produto_favorito.save()
+                return JsonResponse({"message": "Produto removido dos favoritos."})
+            except ProdutoFavorito.DoesNotExist:
+                return JsonResponse({"error": "Produto não encontrado nos favoritos."})
+            except Exception as e:
+                return JsonResponse({"error": str(e)})
+
+    return JsonResponse({"error": "Usuário não autenticado."})
