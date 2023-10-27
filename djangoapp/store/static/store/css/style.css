@@ -242,13 +242,17 @@ header {
     position: absolute;
     right: 0;
     top: 0;
-    padding: 6px 8px;
+    
     margin: 5px;
     font-size: 25px;
-    cursor: pointer;
     border-radius: 50%;
     background: #341d08;
     color: var(--white);
+}
+.favorite-btn button{
+    color: var(--white);
+    padding: 6px 8px;
+    cursor: pointer;
 }
 .prod-img {
     display: flex;
