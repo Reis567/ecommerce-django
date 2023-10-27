@@ -36,6 +36,11 @@ urlpatterns = [
     #store:register
     path('register/', register, name='register'),
 
+    #store:add_favorito
+    path('add_favorito/', add_favorito, name='add_favorito'),
+
+    #store:remove_favorito
+    path('remove_favorito/', remove_favorito, name='remove_favorito'),
 
 
 ]
