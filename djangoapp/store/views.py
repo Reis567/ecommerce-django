@@ -21,10 +21,17 @@ from django.shortcuts import get_object_or_404
 def home(request):
     categorias = Categoria.objects.all()
     if request.user.is_authenticated:
+        user = request.user
         comprador = request.user.comprador
         pedido , created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
         items = pedido.itemdepedido_set.all()
         itemsCarrinho = pedido.get_cart_items
+
+        favoritos_ids = list(
+        ProdutoFavorito.objects
+        .filter(comprador=user.comprador, favorito=True)
+        .values_list('produto_id', flat=True)
+    )
     else:
         cookieData = cookieCart(request)
 
@@ -60,7 +67,8 @@ def home(request):
         'produtos': produtos,
         'itemsCarrinho': itemsCarrinho,
         'categorias': categorias,
-        'categoria_selecionada': categoria_selecionada,  # Passar a categoria selecionada no contexto
+        'categoria_selecionada': categoria_selecionada,  
+        'favoritos_ids': favoritos_ids,
     }
     return render(request, 'store/home.html', context)
 
@@ -321,3 +329,4 @@ class CustomLoginView(LoginView):
         context['itemsCarrinho'] = itemsCarrinho
 
         return context
+

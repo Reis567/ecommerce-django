@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home,checkout,cart,updateItem,processOrder,register,lista_pedidos,detalhes_pedido
+from .views import home,checkout,cart,updateItem,processOrder,register,lista_pedidos,detalhes_pedido,add_favorito, remove_favorito
 from django.contrib.auth import views as auth_views
 from .views import CustomLoginView
 
@@ -37,4 +37,6 @@ urlpatterns = [
     path('register/', register, name='register'),
 
 
+
 ]
+

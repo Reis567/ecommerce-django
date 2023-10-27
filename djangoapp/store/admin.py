@@ -8,3 +8,5 @@ admin.site.register(EnderecoEnvio)
 admin.site.register(Produto)
 admin.site.register(Categoria)
 admin.site.register(ItemdePedido)
+
+admin.site.register(ProdutoFavorito)

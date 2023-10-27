@@ -35,7 +35,15 @@
             {% for produto in produtos %}
             <div class="prod-card">
                 <div class="favorite-btn">
-                    <i class="bi bi-star-fill"></i>
+                    {% if produto.id in favoritos_ids %}
+                        <button data-product-id="{{ produto.id }}" class="remove-favorito">
+                            <i class="bi bi-star-fill"></i>
+                        </button>
+                    {% else %}
+                        <button data-product-id="{{ produto.id }}" class="add-favorito">
+                            <i class="bi bi-star"></i>
+                        </button>
+                    {% endif %}
                 </div>
                 <div class="prod-img">
                     {% if produto.foto %}
@@ -95,6 +103,57 @@
     menuBtn.classList.toggle("active");
     };
 
+
+    $(document).ready(function() {
+
+        function refreshPage() {
+            location.reload();
+        }
+        // Delegação de evento de clique para elementos dentro de .home-products
+        $(".home-products").on("click", ".add-favorito", function(event) {
+            event.preventDefault();
+            const productId = $(this).data("product-id");
+    
+            // Enviar solicitação AJAX para adicionar favorito
+            $.ajax({
+                type: "POST",
+                url: "{% url 'store:add_favorito' %}",
+                data: { produto_id: productId },
+                success: function(response) {
+                    // Atualizar a interface do usuário conforme necessário (por exemplo, trocar o ícone de estrela)
+                    $(event.target).removeClass("add-favorito").addClass("remove-favorito");
+                    refreshPage();
+                },
+                error: function(error) {
+                    console.log("Erro ao adicionar favorito: " + error);
+                }
+            });
+        });
+    
+        // Delegação de evento de clique para elementos dentro de .home-products
+        $(".home-products").on("click", ".remove-favorito", function(event) {
+            event.preventDefault();
+            const productId = $(this).data("product-id");
+    
+            // Enviar solicitação AJAX para remover favorito
+            $.ajax({
+                type: "POST",
+                url: "{% url 'store:remove_favorito' %}",
+                data: { produto_id: productId },
+                success: function(response) {
+                    // Atualizar a interface do usuário conforme necessário (por exemplo, trocar o ícone de estrela)
+                    $(event.target).removeClass("remove-favorito").addClass("add-favorito");
+                    refreshPage();
+                },
+                error: function(error) {
+                    console.log("Erro ao remover favorito: " + error);
+                }
+            });
+        });
+    });
+    
 </script>
+
+
 
 {% endblock content %}
