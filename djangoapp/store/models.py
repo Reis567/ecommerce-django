@@ -38,6 +38,18 @@ class Produto(models.Model):
         verbose_name = "Produto"
         verbose_name_plural = "Produtos"
 
+class ProdutoFavorito(models.Model):
+    comprador = models.ForeignKey(Comprador, on_delete=models.SET_NULL, null=True, blank=True)
+    produto = models.ForeignKey(Produto, on_delete=models.SET_NULL, null=True)
+    favorito = models.BooleanField(default=False)
+
+    def __str__(self):
+        return str(self.comprador) + " - " + str(self.produto)
+
+    class Meta:
+        unique_together = ('comprador', 'produto',)
+
+
 class Pedido(models.Model):
     comprador = models.ForeignKey(Comprador, on_delete=models.SET_NULL,null=True,blank=True )
     data_pedido = models.DateTimeField(auto_now_add=True)
