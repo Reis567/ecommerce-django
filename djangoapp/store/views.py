@@ -381,3 +381,18 @@ class FavoriteListView(ListView):
     def get_queryset(self):
         # Filtrar os objetos com favorito=True
         return ProdutoFavorito.objects.filter(favorito=True)
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        if self.request.user.is_authenticated:
+            comprador = self.request.user.comprador
+            pedido, created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
+            items = pedido.itemdepedido_set.all()
+            itemsCarrinho = pedido.get_cart_items
+
+        context['items'] = items
+        context['pedido'] = pedido
+        context['itemsCarrinho'] = itemsCarrinho
+
+        return context
