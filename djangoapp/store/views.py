@@ -330,3 +330,24 @@ class CustomLoginView(LoginView):
 
         return context
 
+
+
+def add_favorito(request):
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            produto_id = request.POST.get("produto_id")
+            comprador = request.user.comprador
+
+            try:
+                produto_favorito, created = ProdutoFavorito.objects.get_or_create(
+                    comprador=comprador,
+                    produto_id=produto_id,
+                )
+                produto_favorito.favorito = True
+                produto_favorito.save()
+                return JsonResponse({"message": "Produto adicionado aos favoritos."})
+            except Exception as e:
+                return JsonResponse({"error": str(e)})
+    else:
+        return redirect('store:custom_login')
+
