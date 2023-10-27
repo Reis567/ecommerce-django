@@ -1,7 +1,7 @@
 {% extends "store/base.html" %}
 {% load static %}
 
-{% block title %}Pedido {{pedido.id}} - {% endblock title %}
+{% block title %}Pedido {{pedido_old.id}} - {% endblock title %}
 {% block content %}
 <section class="pedidodetail">
     <div class="pedidodetail-content">
@@ -10,15 +10,15 @@
             Voltar aos pedidos
         </a>
         <div class="pedidodetail-title">
-            <h3>Id Pedido : {{pedido.id}}</h3>
-            <h3>{{pedido.data_pedido}}</h3>
+            <h3>Id Pedido : {{pedido_old.id}}</h3>
+            <h3>{{pedido_old.data_pedido}}</h3>
 
 
-            <h3>Valor Total : R$ {{ pedido.get_cart_total|floatformat:2 }}</h3>
-            <h3>Quantidade : {{ pedido.get_cart_items }}</h3>
+            <h3>Valor Total : R$ {{ pedido_old.get_cart_total|floatformat:2 }}</h3>
+            <h3>Quantidade : {{ pedido_old.get_cart_items }}</h3>
         </div>
         <h1 class="itens-tag">Itens do pedido :</h1>
-        {% for item in itens_do_pedido %}
+        {% for item in itens_do_pedido_old %}
                 <div class="item-do-pedido">
                     <img src="{{ item.produto.foto.url }}" alt="{{ item.produto.nome }}">
                     <h3>{{ item.produto.nome }}</h3>

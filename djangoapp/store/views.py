@@ -241,17 +241,28 @@ def lista_pedidos(request):
 
 def detalhes_pedido(request, id_transacao):
     if request.user.is_authenticated:
-
-        pedido = get_object_or_404(Pedido, id_transacao=id_transacao)
-        itens_do_pedido = pedido.itemdepedido_set.all()
+        comprador = request.user.comprador
+        pedido, created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
         items = pedido.itemdepedido_set.all()
         itemsCarrinho = pedido.get_cart_items
+
+        pedido_old = get_object_or_404(Pedido, id_transacao=id_transacao)
+        itens_do_pedido_old = pedido.itemdepedido_set.all()
+        items_old = pedido.itemdepedido_set.all()
+        itemsCarrinho_old = pedido.get_cart_items
+
+
+
     else:
         return redirect('store:custom_login')
 
     context = {
+        'pedido_old': pedido_old,
+        'itens_do_pedido_old': itens_do_pedido_old,
+        'items_old': items_old,
+        'itemsCarrinho_old': itemsCarrinho_old,
+
         'pedido': pedido,
-        'itens_do_pedido': itens_do_pedido,
         'items': items,
         'itemsCarrinho': itemsCarrinho,
     }
