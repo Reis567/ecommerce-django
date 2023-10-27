@@ -15,7 +15,7 @@ from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
 from .forms import CustomUserCreationForm
 from django.shortcuts import get_object_or_404
-
+from django.views.generic.list import ListView
 
 
 def home(request):
@@ -371,3 +371,7 @@ def remove_favorito(request):
                 return JsonResponse({"error": str(e)})
 
     return JsonResponse({"error": "Usuário não autenticado."})
+
+
+class FavoriteListView(ListView):
+    model = ProdutoFavorito
