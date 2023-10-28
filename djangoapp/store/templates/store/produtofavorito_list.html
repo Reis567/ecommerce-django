@@ -6,11 +6,16 @@
 
 <section class="favoritos">
         <div class="favoritos-content">
+                
+                <div class="favorito-card">
+
                 {% for favorito in object_list %}
                         {{favorito.produto.nome}}
                 {% empty %}
                         <h3>Sem favoritos</h3>
                 {% endfor %}
+                </div>
+                
         </div>
 
 </section>
