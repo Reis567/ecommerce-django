@@ -6,11 +6,17 @@
 
 <section class="favoritos">
         <div class="favoritos-content">
-                
+                <h1>
+                        Favoritos
+                </h1>
                 <div class="favorito-card">
 
                 {% for favorito in object_list %}
-                        {{favorito.produto.nome}}
+                        <h3>
+                                {{favorito.produto.nome}}
+                        </h3>
+                        
+                        <img src="{{ favorito.produto.foto.url }}" alt="{{ item.produto.nome }}">
                 {% empty %}
                         <h3>Sem favoritos</h3>
                 {% endfor %}
