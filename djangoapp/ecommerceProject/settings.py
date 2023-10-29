@@ -140,3 +140,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
+
+
+EMAIL_BACKEND = os.getenv('EMAIL_BACKEND', 'change-me')
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'change-me')
+EMAIL_PORT = os.getenv('EMAIL_PORT', 'change-me')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'change-me')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'change-me')
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'change-me')

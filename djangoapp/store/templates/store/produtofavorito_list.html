@@ -29,17 +29,17 @@
                 <div class="pagination">
                         <span class="step-links">
                             {% if object_list.has_previous %}
-                                <a class="pagination-btn2" href="?page=1">&laquo; first</a>
+                                <a class="pagination-btn2" href="?page=1">&laquo; Primeira</a>
                                 <a class="pagination-btn2" href="?page={{ object_list.previous_page_number }}">Anterior</a>
                             {% endif %}
             
                             <span class="current-page">
-                                Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+                                Pagina {{ object_list.number }} de {{ object_list.paginator.num_pages }}.
                             </span>
             
                             {% if object_list.has_next %}
                                 <a class="pagination-btn2" href="?page={{ object_list.next_page_number }}">Próximo</a>
-                                <a class="pagination-btn2" href="?page={{ object_list.paginator.num_pages }}">last &raquo;</a>
+                                <a class="pagination-btn2" href="?page={{ object_list.paginator.num_pages }}">Última &raquo;</a>
                             {% endif %}
                         </span>
                     </div>
