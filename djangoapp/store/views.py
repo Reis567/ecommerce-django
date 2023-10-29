@@ -381,7 +381,7 @@ class FavoriteListView(ListView):
     def get_queryset(self):
         # Filtrar os objetos com favorito=True
         return ProdutoFavorito.objects.filter(favorito=True)
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
@@ -394,5 +394,18 @@ class FavoriteListView(ListView):
         context['items'] = items
         context['pedido'] = pedido
         context['itemsCarrinho'] = itemsCarrinho
+
+        # Configurar a paginação
+        page = self.request.GET.get('page')
+        paginator = Paginator(self.object_list, 5)  # 5 itens por página
+
+        try:
+            object_list = paginator.page(page)
+        except PageNotAnInteger:
+            object_list = paginator.page(1)
+        except EmptyPage:
+            object_list = paginator.page(paginator.num_pages)
+
+        context['object_list'] = object_list
 
         return context
