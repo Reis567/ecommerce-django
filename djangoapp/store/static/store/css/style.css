@@ -1055,6 +1055,33 @@ form .checkout-shipping h3{
     font-size: 40px;
     margin-bottom: 100px;
 }
+
+.pagination{
+    width: 100%;
+    text-align: center;
+}
+
+.step-links span{
+    font-size: 19px;
+}
+
+.pagination-btn{
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    background: var(--brown);
+    color: var(--white);
+    border: 2px solid transparent;
+    box-shadow: 0 0 4px var(--black);
+    transition: 0.3s ease-in-out;
+}
+
+.pagination-btn:hover{
+    box-shadow: inset 0 0 4px var(--white);
+    box-shadow: 0 0 4px var(--black);
+    border: 2px solid var(--white);
+
+}
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {
