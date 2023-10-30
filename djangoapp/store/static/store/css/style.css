@@ -1215,6 +1215,11 @@ form .checkout-shipping h3{
     color: var(--white);
     cursor: pointer;
 }
+.resetform-content form input:not(.confirma-senha)  {
+    border: 2px solid var(--brown);
+    padding: 5px;
+    border-radius: 10px;
+}
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {
