@@ -16,7 +16,8 @@ from django.contrib.auth.views import LoginView
 from .forms import CustomUserCreationForm
 from django.shortcuts import get_object_or_404
 from django.views.generic.list import ListView
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 
 
@@ -40,6 +41,7 @@ def home(request):
         itemsCarrinho = cookieData['itemsCarrinho']
         pedido = cookieData['pedido']
         items = cookieData['items']
+        favoritos_ids=0
     
     categoria_selecionada = request.GET.get('categoria')
     if categoria_selecionada:
@@ -375,8 +377,10 @@ def remove_favorito(request):
     return JsonResponse({"error": "Usuário não autenticado."})
 
 
-class FavoriteListView(ListView):
+class FavoriteListView(LoginRequiredMixin ,ListView):
     model = ProdutoFavorito
+    login_url = '/login/'
+
 
     def get_queryset(self):
         # Filtrar os objetos com favorito=True
@@ -385,11 +389,12 @@ class FavoriteListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        if self.request.user.is_authenticated:
-            comprador = self.request.user.comprador
-            pedido, created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
-            items = pedido.itemdepedido_set.all()
-            itemsCarrinho = pedido.get_cart_items
+        
+        comprador = self.request.user.comprador
+        pedido, created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
+        items = pedido.itemdepedido_set.all()
+        itemsCarrinho = pedido.get_cart_items
+        
 
         context['items'] = items
         context['pedido'] = pedido
