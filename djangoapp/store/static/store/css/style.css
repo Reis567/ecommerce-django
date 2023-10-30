@@ -1125,6 +1125,30 @@ form .checkout-shipping h3{
     font-size: 18px;
     margin-bottom: 30px;
 }
+.resetpass-content form{
+    display: flex;
+    flex-direction: column;
+}
+
+.resetpass-content form .input-email input{
+    border: 2px solid var(--brown);
+    padding: 5px;
+    border-radius: 10px;
+}
+.resetpass-content form .enviar-email{
+    border: 2px solid var(--brown);
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+.resetpass-content form .enviar-email:hover{
+    border: 2px solid var(--white);
+    background: var(--brown);
+    color: var(--white);
+    cursor: pointer;
+}
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {
