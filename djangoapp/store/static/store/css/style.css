@@ -1149,6 +1149,26 @@ form .checkout-shipping h3{
     color: var(--white);
     cursor: pointer;
 }
+
+.resetsent{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.resetsent-content{
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 3px solid var(--brown);
+    border-radius: 10px;
+    text-align: center;
+}
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {
