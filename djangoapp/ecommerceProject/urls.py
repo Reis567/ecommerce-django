@@ -22,6 +22,7 @@ from store.views import home,checkout,cart
 
 
 urlpatterns = [
+    path('', include('passreset.urls')),
     path('', include('store.urls')),
     path('admin/', admin.site.urls),
 ]
