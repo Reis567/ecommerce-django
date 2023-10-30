@@ -26,7 +26,7 @@ urlpatterns = [
     path('pedidos/', lista_pedidos, name='lista_pedidos'),
 
     #store:detalhes_pedido
-    path('pedido/<str:id_transacao>/', detalhes_pedido, name='detalhes_pedido'),
+    path('pedido/<int:id>/', detalhes_pedido, name='detalhes_pedido'),
 
     #store:custom_login
     path('login/', CustomLoginView.as_view(template_name='store/login.html'), name='custom_login'),
