@@ -3,12 +3,16 @@ from .views import home,checkout,cart,updateItem,processOrder,register,lista_ped
 from django.contrib.auth import views as auth_views
 from .views import CustomLoginView
 from .views import FavoriteListView
+from .views import ProdutoDetailView
 
 app_name = 'store'
 
 urlpatterns = [
     # store:home
     path('', home, name="home"),
+
+    #store:detalhes_produto/id
+    path('produto/<int:pk>/', ProdutoDetailView.as_view(), name='detalhes_produto'),
 
     # store:checkout
     path('checkout/', checkout, name="checkout"),
@@ -45,9 +49,6 @@ urlpatterns = [
 
     #store:favoritos
     path('favoritos/',FavoriteListView.as_view(),name='favoritos'),
-
-
-    
 
 
 ]

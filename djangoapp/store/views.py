@@ -16,6 +16,7 @@ from django.contrib.auth.views import LoginView
 from .forms import CustomUserCreationForm
 from django.shortcuts import get_object_or_404
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -75,6 +76,30 @@ def home(request):
         'favoritos_ids': favoritos_ids,
     }
     return render(request, 'store/home.html', context)
+
+
+class ProdutoDetailView(DetailView):
+    model = Produto
+    template_name = 'store/produto_detail.html' 
+    context_object_name = 'produto'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        if self.request.user.is_authenticated:
+            user = self.request.user
+            comprador = user.comprador
+            pedido, created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
+            itemsCarrinho = pedido.get_cart_items
+        else:
+            cookieData = cookieCart(self.request)
+            itemsCarrinho = cookieData['itemsCarrinho']
+
+        context['itemsCarrinho'] = itemsCarrinho
+
+        return context
+
+
 
 def cart(request):
 
