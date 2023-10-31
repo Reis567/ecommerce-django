@@ -33,6 +33,61 @@
 </section>
 
 
+<script>
+
+    $(document).ready(function() {
+
+        function refreshPage() {
+            location.reload();
+        }
+        // Delegação de evento de clique para elementos dentro de .producdetail
+        $(".producdetail").on("click", ".add-favorito", function(event) {
+            event.preventDefault();
+            const productId = $(this).data("product-id");
+    
+            // Enviar solicitação AJAX para adicionar favorito
+            $.ajax({
+                type: "POST",
+                url: "{% url 'store:add_favorito' %}",
+                data: { produto_id: productId },
+                success: function(response) {
+                    // Atualizar a interface do usuário conforme necessário (por exemplo, trocar o ícone de estrela)
+                    $(event.target).removeClass("add-favorito").addClass("remove-favorito");
+                    refreshPage();
+                },
+                error: function(error) {
+                    console.log("Erro ao adicionar favorito: " + error);
+                }
+            });
+        });
+    
+        // Delegação de evento de clique para elementos dentro de .producdetail
+        $(".producdetail").on("click", ".remove-favorito", function(event) {
+            event.preventDefault();
+            const productId = $(this).data("product-id");
+    
+            // Enviar solicitação AJAX para remover favorito
+            $.ajax({
+                type: "POST",
+                url: "{% url 'store:remove_favorito' %}",
+                data: { produto_id: productId },
+                success: function(response) {
+                    // Atualizar a interface do usuário conforme necessário (por exemplo, trocar o ícone de estrela)
+                    $(event.target).removeClass("remove-favorito").addClass("add-favorito");
+                    refreshPage();
+                },
+                error: function(error) {
+                    console.log("Erro ao remover favorito: " + error);
+                }
+            });
+        });
+    });
+    
+</script>
+
+
+
+
 
 
 {% endblock %}
