@@ -91,11 +91,19 @@ class ProdutoDetailView(DetailView):
             comprador = user.comprador
             pedido, created = Pedido.objects.get_or_create(comprador=comprador, completo=False)
             itemsCarrinho = pedido.get_cart_items
+
+            favoritos_ids = list(
+        ProdutoFavorito.objects
+        .filter(comprador=user.comprador, favorito=True)
+        .values_list('produto_id', flat=True))
         else:
             cookieData = cookieCart(self.request)
             itemsCarrinho = cookieData['itemsCarrinho']
+            favoritos_ids = 0
 
         context['itemsCarrinho'] = itemsCarrinho
+        context['favoritos_ids'] = favoritos_ids
+        
 
         return context
 
