@@ -12,7 +12,7 @@
                 <div class="favoritos-body">
                         {% for favorito in object_list %}
                         <div class="favorito-card">
-                                <a href="#" class="produto-favorito-link"></a>
+                                <a href="{% url 'store:detalhes_produto' favorito.produto.id %}" class="produto-favorito-link"></a>
                         
                                 <h3>
                                         {{favorito.produto.nome}}
