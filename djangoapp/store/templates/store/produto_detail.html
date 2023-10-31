@@ -1,0 +1,12 @@
+{% extends "store/base.html" %}
+{% load static %}
+
+{% block title %}Produto {{produto.id}}  - {% endblock title %}
+
+
+{% block content %}
+    <h1>Detalhes do Produto: {{ produto.nome }}</h1>
+    <p>Preço: R$ {{ produto.price }}</p>
+    <p>Categoria: {{ produto.categoria }}</p>
+    <img src="{{ produto.foto.url }}" alt="{{ produto.nome }}">
+{% endblock %}
