@@ -1234,8 +1234,9 @@ form .checkout-shipping h3{
     width: 40%;
     height: 65%;
     border: 3px solid var(--brown);
-    border-radius: 10px;
+    border-radius: 15px;
     display: flex;
+    box-shadow: 2px 2px 8px var(--black);
 }
 .producdetail-content .produc-foto{
     width: 50%;
@@ -1243,6 +1244,7 @@ form .checkout-shipping h3{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 .producdetail-content .produc-foto img{
     max-width: 100%;
@@ -1252,8 +1254,43 @@ form .checkout-shipping h3{
 .producdetail-content .produc-infos{
     width: 50%;
     height: 100%;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background: var(--brown);
+    color: var(--white);
+    border-radius: 10px;
 }
 
+.producdetail-content .produc-infos h1{
+    font-size: 45px;
+}
+.producdetail-content .produc-infos h3{
+    font-size: 25px;
+    margin-top: 20px;
+}
+.producdetail-content .produc-infos .price{
+    font-size: 55px;
+    font-weight: bold;
+}
+.producdetail-content .produc-infos .infos-btns{
+    position: absolute;
+    right: 25%;
+    top: 50%;
+    display: flex;
+    font-size: 40px;
+}
+.producdetail-content .produc-infos .infos-btns button{
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--brown);
+    margin-inline: 20px;
+}
 
 /* Celulares */
 @media(max-width:480px){

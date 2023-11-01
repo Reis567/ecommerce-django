@@ -11,23 +11,28 @@
         <img src="{{ produto.foto.url }}" alt="{{ produto.nome }}">
     </div>
     <div class="produc-infos">
-        <h1>{{ produto.nome }}</h1>
-        <h3>Categoria: {{ produto.categoria }}</h3>
-        <p>Preço: R$ {{ produto.price }}</p>
+        <div class="infos-head">
 
-        {% if produto.id in favoritos_ids %}
-                        <button data-product-id="{{ produto.id }}" class="remove-favorito">
-                            <i class="bi bi-star-fill"></i>
-                        </button>
-                    {% else %}
-                        <button data-product-id="{{ produto.id }}" class="add-favorito">
-                            <i class="bi bi-star"></i>
-                        </button>
-        {% endif %}
+            <h1>{{ produto.nome }}</h1>
+            <h3>Categoria: {{ produto.categoria }}</h3>
+        </div>
+        <p class="price">R$ {{ produto.price }}</p>
+        <div class="infos-btns">
 
-        <button data-product="{{produto.id}}" data-action="add" class="addcartbtn update-cart">
-            <i class="bi bi-cart-plus-fill"></i>
-        </button>
+            {% if produto.id in favoritos_ids %}
+                            <button data-product-id="{{ produto.id }}" class="remove-favorito">
+                                <i class="bi bi-star-fill"></i>
+                            </button>
+                        {% else %}
+                            <button data-product-id="{{ produto.id }}" class="add-favorito">
+                                <i class="bi bi-star"></i>
+                            </button>
+            {% endif %}
+    
+            <button data-product="{{produto.id}}" data-action="add" class="addcartbtn update-cart">
+                <i class="bi bi-cart-plus-fill"></i>
+            </button>
+        </div>
     </div>
 </div>
 </section>
