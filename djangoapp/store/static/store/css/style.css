@@ -1220,6 +1220,24 @@ form .checkout-shipping h3{
     padding: 5px;
     border-radius: 10px;
 }
+
+.producdetail{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.producdetail-content{
+    width: 40%;
+    height: 65%;
+    border: 3px solid var(--brown);
+    border-radius: 10px;
+    display: flex;
+}
+
 /* Celulares */
 @media(max-width:480px){
     .nav-bar {
