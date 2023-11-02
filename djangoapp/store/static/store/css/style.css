@@ -1394,6 +1394,40 @@ form .checkout-shipping h3{
         padding: 5px;
     }
 
+
+    
+.pedidos{
+    min-height: 100vh;
+    width: 100%;
+}
+
+.pedidos-content{
+    min-height: 90vh;
+    width: 100%;
+}
+.pedidos-content .pedidos-title{
+    margin-bottom: 50px;
+    font-size: 50px;
+}
+
+.pedidos-list{
+    width: 95%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.pedido-data{
+    margin-right: 0px;
+    font-size: 10px;
+}
+.pedidos-list img{
+        max-width: 70px;
+        padding: 2px;
+        margin: 0;
+    }
+.pedido-link{
+    padding: 0;
+    font-size: 10px;
+}
 }
 
 /* Celulares */
