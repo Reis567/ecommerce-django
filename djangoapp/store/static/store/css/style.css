@@ -1394,6 +1394,34 @@ form .checkout-shipping h3{
         padding: 5px;
     }
 
+    .cart-head{
+        margin-left: 1%;
+        margin-top: 3%;
+        margin-bottom: 5%;
+        width: 95%;
+        height: 30%;
+        padding: 10px;
+    }
+    .cart-items-value h3{
+        font-size: 20px;
+    }
+    .cart-head a{
+        font-size: 15px;
+    }
+
+    .cart-numbs{
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .cart-items-value .checkout-btn{
+        padding: 8px;
+        font-size: 15px;
+        margin-right: 5px;
+    
+    }
 
     
 .pedidos{
