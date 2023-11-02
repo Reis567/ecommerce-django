@@ -187,23 +187,27 @@
                 <div class="auth-buttons">
 
                     {% if user.is_authenticated %}
+                    <h5>
+                        <i class="bi bi-person"></i>
+                        {{request.user.username}}
+                    </h5>
     
-                        <button>
-                            <a href="#">Sair</a>
-                        </button>
+                    <button>
+                        <a href="{% url 'store:logout' %}">Sair</a>
+                    </button>
     
-                    {% else %}
+                {% else %}
     
-                        <button>
-                            <a href="#">Login</a>
-                        </button>
-                
-                        <button>
-                            <a href="#">Registre-se
-                            </a>
-                        </button>
+                    <button>
+                        <a href="{% url 'store:custom_login' %}">Login</a>
+                    </button>
+            
+                    <button>
+                        <a href="{% url 'store:register' %}">Registre-se
+                        </a>
+                    </button>
     
-                    {% endif %}
+                {% endif %}
                 </div>
             </div>
             
