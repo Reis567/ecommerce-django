@@ -1292,8 +1292,11 @@ form .checkout-shipping h3{
     margin-inline: 20px;
 }
 
-/* Celulares */
-@media(max-width:480px){
+/* Celulares pequenos */
+@media(max-width:375px){
+    .home-content{
+        background-color: aqua;
+    }
     .nav-bar {
         padding: 1.5rem 4rem;
     }
@@ -1349,8 +1352,11 @@ form .checkout-shipping h3{
     }
 }
 
-/* Dispositivos pequenos */
-@media(min-width:481px) and (max-width:767px){
+/* Celulares */
+@media(min-width:376px) and (max-width:767px){
+    .home-content{
+        background-color: #000000;
+    }
     .nav-bar {
         padding: 1.5rem 4rem;
     }

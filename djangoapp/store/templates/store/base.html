@@ -159,22 +159,24 @@
                 <ul>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Inicio</a>
+                        <a href="{% url 'store:home' %}" class="nav-link">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Compras</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Favoritos</a>
+                        <a href="{% url 'store:lista_pedidos' %}" class="nav-link">Pedidos</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{% url 'store:favoritos' %}" class="nav-link">Favoritos
+                            <i class="bi bi-star-fill"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{% url 'store:cart' %}" class="nav-link">
                             Carrinho
                             <i class="bi bi-cart4">
                                 <span class="cart-total" id="cart-total">
-                                    0
+                                    {{itemsCarrinho}}
                                 </span>
                             </i>
                         </a>
