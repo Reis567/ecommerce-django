@@ -1423,59 +1423,74 @@ form .checkout-shipping h3{
     
     }
 
-    
-.pedidos{
-    min-height: 100vh;
-    width: 100%;
-}
-
-.pedidos-content{
-    min-height: 90vh;
-    width: 100%;
-}
-.pedidos-content .pedidos-title{
-    margin-bottom: 50px;
-    font-size: 50px;
-    text-align: center;
-}
-
-.pedidos-list{
-    width: 95%;
-    padding: 10px;
-    border-radius: 10px;
-}
-.pedido-data{
-    margin-right: 0px;
-    font-size: 10px;
-}
-.pedidos-list img{
-        max-width: 70px;
-        padding: 2px;
-        margin: 0;
+        
+    .pedidos{
+        min-height: 100vh;
+        width: 100%;
     }
-.pedido-link{
-    padding: 0;
-    font-size: 10px;
-}
 
-.favoritos-body{
-    width: 100%;
-    height: 70%;
-}
-.favorito-card{
-    width: 95%;
-}
-.favorito-card h3{
-    margin-left: 10px;
-    font-size: 15px;
-}
-.favorito-card img{
-    margin-right: 10px;
-}
-.favoritos-title{
-    font-size: 45px;
-    margin-bottom: 20px;
-}
+    .pedidos-content{
+        min-height: 90vh;
+        width: 100%;
+    }
+    .pedidos-content .pedidos-title{
+        margin-bottom: 50px;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .pedidos-list{
+        width: 95%;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .pedido-data{
+        margin-right: 0px;
+        font-size: 10px;
+    }
+    .pedidos-list img{
+            max-width: 70px;
+            padding: 2px;
+            margin: 0;
+        }
+    .pedido-link{
+        padding: 0;
+        font-size: 10px;
+    }
+
+    .favoritos-body{
+        width: 100%;
+        height: 70%;
+    }
+    .favorito-card{
+        width: 95%;
+    }
+    .favorito-card h3{
+        margin-left: 10px;
+        font-size: 15px;
+    }
+    .favorito-card img{
+        margin-right: 10px;
+    }
+    .favoritos-title{
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+    .cart-items{
+        max-height: 70vh;
+    }
+
+
+    .cart-items table th, .cart-items table td {
+        padding: 5px; 
+        width: 10%; 
+        font-size: 13px;
+    }
+    .cart-items table td i{
+        font-size: 13px;
+    }
+
+
 
 
 
