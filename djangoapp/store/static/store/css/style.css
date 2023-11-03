@@ -1489,6 +1489,20 @@ form .checkout-shipping h3{
     .cart-items table td i{
         font-size: 13px;
     }
+    .login-content{
+        width: 95%;
+
+
+    }
+    .register-content{
+        width: 95%;
+        height: 70%;
+
+
+    }
+
+    
+
 
 
 
@@ -1692,6 +1706,17 @@ form .checkout-shipping h3{
     }
     .cart-items table td i{
         font-size: 13px;
+    }
+    .login-content{
+        width: 95%;
+
+
+    }
+    .register-content{
+        width: 95%;
+        height: 70%;
+
+
     }
 
 }
