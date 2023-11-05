@@ -1955,6 +1955,12 @@ form .checkout-shipping h3{
         font-size: 13px;
 
     }
+    .favorito-card{
+        width: 85%;
+    }
+    .favoritos-title{
+        margin-bottom: 50px;
+    }
 
 
 
