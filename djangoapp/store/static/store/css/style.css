@@ -1934,6 +1934,29 @@ form .checkout-shipping h3{
         font-size: 20px;
     }
 
+    .pedidodetail-content img{
+        max-height: 90%;
+        max-width: 20%;
+    }
+    .pedidodetail-title{
+        width: 95%;
+        display: flex;
+        padding: 10px;
+        text-align: center;
+        font-size: 12px;
+        gap: 5px;
+    }
+    .item-do-pedido{
+        width: 95%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height: 100px;
+        font-size: 13px;
+
+    }
+
+
 
 }
 
