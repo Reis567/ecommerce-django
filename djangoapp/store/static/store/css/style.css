@@ -1981,6 +1981,13 @@ form .checkout-shipping h3{
         display: flex;
         align-items: center;
     }
+    .login-content{
+        width: 50%;
+    }
+    .register-content{
+        width: 50%;
+        height: 70%;
+    }
 
 
 
