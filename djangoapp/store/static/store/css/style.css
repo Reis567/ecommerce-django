@@ -1501,8 +1501,30 @@ form .checkout-shipping h3{
 
     }
 
-    
+        
+    .producdetail-content{
+        width: 95%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+    .producdetail-content .produc-foto{
+        width: 100%;
+        height: 50%;
 
+    }
+    .producdetail-content .produc-infos{
+        width: 100%;
+        height: 50%;
+    }
+
+    .producdetail-content .produc-infos h1{
+        font-size: 30px;
+    }
+    .producdetail-content .produc-infos h3{
+        font-size: 20px;
+        margin-top: 20px;
+    }
 
 
 
