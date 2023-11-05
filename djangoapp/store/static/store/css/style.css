@@ -1526,6 +1526,10 @@ form .checkout-shipping h3{
         margin-top: 20px;
     }
 
+    .producdetail-content .produc-infos .infos-btns{
+        right: 22%;
+        top: 50%;
+    }
 
 
 
@@ -1848,6 +1852,20 @@ form .checkout-shipping h3{
         padding:5px;
         font-size: 15px;
     }
+    .producdetail-content{
+        width: 75%;
+        height: 70%;
+    }
+    .producdetail-content .produc-infos .price{
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .producdetail-content .produc-infos .infos-btns{
+        right: 16%;
+        top: 50%;
+    }
+
+
 }
 
 /* Tablets grandes e Notebook */
