@@ -1864,6 +1864,18 @@ form .checkout-shipping h3{
         right: 16%;
         top: 50%;
     }
+      
+    .pedidos-content{
+        min-height: 90vh;
+        width: 100%;
+    }
+
+    .pedidos-list{
+        width: 85%;
+    }
+    .pedido-data{
+        font-size: 20px;
+    }
 
 
 }
