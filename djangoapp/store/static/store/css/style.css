@@ -1961,6 +1961,26 @@ form .checkout-shipping h3{
     .favoritos-title{
         margin-bottom: 50px;
     }
+    
+    .cart-items{
+        max-height: 70vh;
+        width: 97%;
+    }
+
+
+    .cart-items table th, .cart-items table td {
+        padding: 5px; 
+        width: 10%; 
+        font-size: 13px;
+    }
+    .cart-items table td i{
+        font-size: 13px;
+    }
+    .cart-numbs{
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
 
 
 
