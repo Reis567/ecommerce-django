@@ -2043,4 +2043,10 @@ form .checkout-shipping h3{
     width: 95%;
     font-size: 14px;
 }
+.favorito-card{
+    width: 69%;
+}
+.cart-numbs{
+    width: 40%;
+}
 }
