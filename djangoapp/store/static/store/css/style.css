@@ -2049,4 +2049,13 @@ form .checkout-shipping h3{
 .cart-numbs{
     width: 40%;
 }
+
+.producdetail-content{
+    width: 65%;
+}
+
+.producdetail-content .produc-infos .infos-btns{
+    right: 19%;
+}
+
 }
