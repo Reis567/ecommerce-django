@@ -1458,6 +1458,34 @@ form .checkout-shipping h3{
         font-size: 10px;
     }
 
+        
+    .pedidodetail-content{
+        margin-top: 40px;
+
+    }
+
+    .pedidodetail-content img{
+        max-height: 30%;
+        max-width: 30%;
+    }
+    .pedidodetail-title{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 5px;
+        text-align: center;
+    }
+    .item-do-pedido{
+        width: 95%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        min-height: 200px;
+
+    }
+
     .favoritos-body{
         width: 100%;
         height: 70%;
@@ -1501,9 +1529,35 @@ form .checkout-shipping h3{
 
     }
 
-    
+        
+    .producdetail-content{
+        width: 95%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+    .producdetail-content .produc-foto{
+        width: 100%;
+        height: 50%;
 
+    }
+    .producdetail-content .produc-infos{
+        width: 100%;
+        height: 50%;
+    }
 
+    .producdetail-content .produc-infos h1{
+        font-size: 30px;
+    }
+    .producdetail-content .produc-infos h3{
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .producdetail-content .produc-infos .infos-btns{
+        right: 22%;
+        top: 50%;
+    }
 
 
 
@@ -1676,6 +1730,35 @@ form .checkout-shipping h3{
         font-size: 10px;
     }
 
+    
+    .pedidodetail-content{
+        margin-top: 40px;
+
+    }
+
+    .pedidodetail-content img{
+        max-height: 30%;
+        max-width: 30%;
+    }
+    .pedidodetail-title{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 5px;
+        text-align: center;
+    }
+    .item-do-pedido{
+        width: 95%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        min-height: 200px;
+
+    }
+
+
     .favoritos-body{
         width: 100%;
         height: 70%;
@@ -1718,6 +1801,32 @@ form .checkout-shipping h3{
 
 
     }
+            
+    .producdetail-content{
+        width: 95%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+    .producdetail-content .produc-foto{
+        width: 100%;
+        height: 50%;
+
+    }
+    .producdetail-content .produc-infos{
+        width: 100%;
+        height: 50%;
+    }
+
+    .producdetail-content .produc-infos h1{
+        font-size: 30px;
+    }
+    .producdetail-content .produc-infos h3{
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+
 
 }
 
@@ -1776,6 +1885,112 @@ form .checkout-shipping h3{
     .open {
         display: block;
     }
+
+    .home-products {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; 
+        padding: 15px;
+    }
+    .prod-card{
+        width: 100%;
+        height: 100%;
+        max-height: 400px;
+        padding: 5px;
+    }
+    .prod-price{
+        font-size:16px;
+        width: 60%;
+    }
+    .prod-btns{
+        width:50%;
+    }
+    .prod-btns button{
+        padding:5px;
+        font-size: 15px;
+    }
+    .producdetail-content{
+        width: 75%;
+        height: 70%;
+    }
+    .producdetail-content .produc-infos .price{
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .producdetail-content .produc-infos .infos-btns{
+        right: 16%;
+        top: 50%;
+    }
+      
+    .pedidos-content{
+        min-height: 90vh;
+        width: 100%;
+    }
+
+    .pedidos-list{
+        width: 85%;
+    }
+    .pedido-data{
+        font-size: 20px;
+    }
+
+    .pedidodetail-content img{
+        max-height: 90%;
+        max-width: 20%;
+    }
+    .pedidodetail-title{
+        width: 95%;
+        display: flex;
+        padding: 10px;
+        text-align: center;
+        font-size: 12px;
+        gap: 5px;
+    }
+    .item-do-pedido{
+        width: 95%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height: 100px;
+        font-size: 13px;
+
+    }
+    .favorito-card{
+        width: 85%;
+    }
+    .favoritos-title{
+        margin-bottom: 50px;
+    }
+    
+    .cart-items{
+        max-height: 70vh;
+        width: 97%;
+    }
+
+
+    .cart-items table th, .cart-items table td {
+        padding: 5px; 
+        width: 10%; 
+        font-size: 13px;
+    }
+    .cart-items table td i{
+        font-size: 13px;
+    }
+    .cart-numbs{
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
+    .login-content{
+        width: 50%;
+    }
+    .register-content{
+        width: 50%;
+        height: 70%;
+    }
+
+
+
 }
 
 /* Tablets grandes e Notebook */
