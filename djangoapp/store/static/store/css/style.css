@@ -279,7 +279,7 @@ header {
     justify-content: space-between;
 }
 .prod-btns{
-    width: 60%;
+    width: 50%;
     
 }
 
@@ -318,7 +318,7 @@ header {
 }
 
 .prod-price{
-    width: 40%;
+    width: 50%;
     padding: 7px 12px;
     font-weight: bold;
     font-size: 23px;
