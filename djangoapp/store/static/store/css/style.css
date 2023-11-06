@@ -485,7 +485,7 @@ header {
     align-items: center;
 }
 .checkout-left{
-    width: 80%;
+    width: 85%;
     height: 75%;
     padding: 10px;
     border: 8px solid var(--brown);
@@ -597,7 +597,7 @@ form .checkout-shipping h3{
 
 
 .checkout-right{
-    width: 40%;
+    width: 45%;
     min-height: 45%;
     padding: 20px;
     display: flex;
@@ -2057,5 +2057,13 @@ form .checkout-shipping h3{
 .producdetail-content .produc-infos .infos-btns{
     right: 19%;
 }
+.checkout-left{
+    height: 85%;
+}
 
+.checkout-right{
+    width: 48%;
+    min-height: 50%;
+
+}
 }
