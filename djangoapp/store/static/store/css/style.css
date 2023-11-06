@@ -2020,20 +2020,27 @@ form .checkout-shipping h3{
 
 .prod-btns{
     width: 48%;
-    
 }
 
 .prod-btns .seeprodbtn{
-
     width: 48%;
 }
 .prod-btns .addcartbtn {
-
     width: 48%;
-
-
-
 
 }
 
+.pedidos-list{
+    width: 75%;
+}
+
+.pedidodetail-title{
+    width: 95%;
+    font-size: 14px;
+}
+.item-do-pedido{
+
+    width: 95%;
+    font-size: 14px;
+}
 }
